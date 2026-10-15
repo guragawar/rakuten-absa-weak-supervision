@@ -1,0 +1,104 @@
+{
+  "generated_at": "2026-07-17T04:42:40.563662+00:00",
+  "panel_files": [
+    "data/panel_parsed/panel_2009.csv",
+    "data/panel_parsed/panel_2010.csv",
+    "data/panel_parsed/panel_2011.csv",
+    "data/panel_parsed/panel_2012.csv",
+    "data/panel_parsed/panel_2013.csv",
+    "data/panel_parsed/panel_2014.csv",
+    "data/panel_parsed/panel_2015.csv",
+    "data/panel_parsed/panel_2016.csv",
+    "data/panel_parsed/panel_2017.csv",
+    "data/panel_parsed/panel_2018.csv",
+    "data/panel_parsed/panel_2019.csv",
+    "data/panel_parsed/panel_2020.csv",
+    "data/panel_parsed/panel_2021.csv",
+    "data/panel_parsed/panel_2022.csv",
+    "data/panel_parsed/panel_2023.csv",
+    "data/panel_parsed/panel_2024.csv"
+  ],
+  "rows_written_per_file": {
+    "panel_2009.csv": 348154,
+    "panel_2010.csv": 483832,
+    "panel_2011.csv": 428378,
+    "panel_2012.csv": 391183,
+    "panel_2013.csv": 353206,
+    "panel_2014.csv": 321276,
+    "panel_2015.csv": 340870,
+    "panel_2016.csv": 79099,
+    "panel_2017.csv": 446236,
+    "panel_2018.csv": 389878,
+    "panel_2019.csv": 468207,
+    "panel_2020.csv": 449824,
+    "panel_2021.csv": 439929,
+    "panel_2022.csv": 672868,
+    "panel_2023.csv": 582656,
+    "panel_2024.csv": 564022
+  },
+  "exclude_hashes_file": "/home/etl/gujincheng/review-ai/data/panel_exclude_text_hashes.jsonl",
+  "n_exclusion_hashes": 11369,
+  "seed": 42,
+  "valid_fraction": 0.1,
+  "rows_total_in": 6996903,
+  "rows_excluded_overlap": 11445,
+  "rows_dup_cross_year": 225840,
+  "rows_empty_review": 0,
+  "rows_written": 6759618,
+  "split_counts": {
+    "train": 6084468,
+    "valid": 675150,
+    "valid_pct": 9.99
+  },
+  "rating_distribution": {
+    "rating_1": {
+      "missing_0": 0,
+      "missing_0_pct": 0.0,
+      "negative_1_2": 463539,
+      "negative_1_2_pct": 6.86,
+      "nonneg_3_5": 6296079,
+      "nonneg_3_5_pct": 93.14
+    },
+    "rating_2": {
+      "missing_0": 1973005,
+      "missing_0_pct": 29.19,
+      "negative_1_2": 326604,
+      "negative_1_2_pct": 4.83,
+      "nonneg_3_5": 4460009,
+      "nonneg_3_5_pct": 65.98
+    },
+    "rating_3": {
+      "missing_0": 303779,
+      "missing_0_pct": 4.49,
+      "negative_1_2": 503237,
+      "negative_1_2_pct": 7.44,
+      "nonneg_3_5": 5952602,
+      "nonneg_3_5_pct": 88.06
+    },
+    "rating_4": {
+      "missing_0": 16,
+      "missing_0_pct": 0.0,
+      "negative_1_2": 361805,
+      "negative_1_2_pct": 5.35,
+      "nonneg_3_5": 6397797,
+      "nonneg_3_5_pct": 94.65
+    },
+    "rating_5": {
+      "missing_0": 38098,
+      "missing_0_pct": 0.56,
+      "negative_1_2": 471106,
+      "negative_1_2_pct": 6.97,
+      "nonneg_3_5": 6250414,
+      "nonneg_3_5_pct": 92.47
+    },
+    "rating_6": {
+      "missing_0": 0,
+      "missing_0_pct": 0.0,
+      "negative_1_2": 354599,
+      "negative_1_2_pct": 5.25,
+      "nonneg_3_5": 6405019,
+      "nonneg_3_5_pct": 94.75
+    }
+  },
+  "output_pool": "data/panel_train_pool_all.csv"
+}

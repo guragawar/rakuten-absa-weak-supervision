@@ -1,0 +1,8 @@
+{
+  "generated_at": "2026-07-22T07:25:57.298637+00:00",
+  "annotated_file": "/home/etl/gujincheng/review-ai/gold/data/verification_sample_to_annotate.xlsx",
+  "total_rows": 400,
+  "n_annotated": 0,
+  "status": "blocked_pending_human_annotation",
+  "message": "Only 0 rows have human_judgment filled (< --min_annotated 100). Task 2 requires human annotation of the sample at /home/etl/gujincheng/review-ai/gold/data/verification_sample_to_annotate.xlsx before this script can score reliability. This step cannot be automated — it needs an annotator to read each sentence and judge explicit/implicit/unclear."
+}

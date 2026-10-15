@@ -1,0 +1,64 @@
+{
+  "inputs": [
+    "data/panel_weak_train.jsonl",
+    "data/panel_weak_valid.jsonl"
+  ],
+  "n_reviews": 583777,
+  "method": "keyword mention rate by weak label; silent_negative_rate is an upper bound on ungrounded negatives",
+  "heads": {
+    "立地": {
+      "keywords": "立地|場所|駅|アクセス|徒歩|近い|近く|遠い|周辺|コンビニ|繁華街|便利|不便",
+      "n_negative": 15072,
+      "n_non_negative": 568705,
+      "mention_rate_negative": 0.4126,
+      "mention_rate_non_negative": 0.3618,
+      "lift": 1.14,
+      "silent_negative_rate": 0.5874
+    },
+    "部屋": {
+      "keywords": "部屋|客室|お部屋|ベッド|寝具|枕|狭い|狭く|広い|広く|眺め|景色|窓",
+      "n_negative": 39124,
+      "n_non_negative": 544653,
+      "mention_rate_negative": 0.693,
+      "mention_rate_non_negative": 0.4824,
+      "lift": 1.437,
+      "silent_negative_rate": 0.307
+    },
+    "食事": {
+      "keywords": "食事|朝食|夕食|朝ごはん|朝ご飯|夕飯|料理|バイキング|ビュッフェ|ご飯|ディナー|会席|味",
+      "n_negative": 23144,
+      "n_non_negative": 388116,
+      "mention_rate_negative": 0.7407,
+      "mention_rate_non_negative": 0.6453,
+      "lift": 1.148,
+      "silent_negative_rate": 0.2593
+    },
+    "風呂": {
+      "keywords": "風呂|浴場|温泉|大浴場|露天|シャワー|湯船|浴槽|お湯|サウナ|湯",
+      "n_negative": 41213,
+      "n_non_negative": 513588,
+      "mention_rate_negative": 0.5425,
+      "mention_rate_non_negative": 0.3893,
+      "lift": 1.394,
+      "silent_negative_rate": 0.4575
+    },
+    "サービス": {
+      "keywords": "スタッフ|対応|接客|フロント|サービス|従業員|店員|仲居|応対|親切|丁寧|感じ",
+      "n_negative": 27374,
+      "n_non_negative": 556403,
+      "mention_rate_negative": 0.5615,
+      "mention_rate_non_negative": 0.3887,
+      "lift": 1.445,
+      "silent_negative_rate": 0.4385
+    },
+    "設備": {
+      "keywords": "設備|アメニティ|エアコン|冷蔵庫|テレビ|Wi-?Fi|wifi|WiFi|清掃|掃除|古い|老朽|トイレ|エレベーター|駐車場|館内",
+      "n_negative": 37794,
+      "n_non_negative": 543412,
+      "mention_rate_negative": 0.5222,
+      "mention_rate_non_negative": 0.2791,
+      "lift": 1.871,
+      "silent_negative_rate": 0.4778
+    }
+  }
+}

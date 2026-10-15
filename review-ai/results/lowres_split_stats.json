@@ -1,0 +1,101 @@
+{
+  "train_file": "absa_train.csv",
+  "full": {
+    "reviews": 9924,
+    "sentences": 42469,
+    "labels": 73824,
+    "negative_labels": 19038
+  },
+  "subsets": {
+    "absa_train_f10_s42.csv": {
+      "reviews": 993,
+      "sentences": 4183,
+      "labels": 7346,
+      "negative_labels": 2104
+    },
+    "absa_train_f25_s42.csv": {
+      "reviews": 2481,
+      "sentences": 10526,
+      "labels": 18622,
+      "negative_labels": 4852
+    },
+    "absa_train_f50_s42.csv": {
+      "reviews": 4962,
+      "sentences": 21219,
+      "labels": 36994,
+      "negative_labels": 9709
+    },
+    "absa_train_f10_s43.csv": {
+      "reviews": 993,
+      "sentences": 4350,
+      "labels": 7429,
+      "negative_labels": 1822
+    },
+    "absa_train_f25_s43.csv": {
+      "reviews": 2481,
+      "sentences": 10656,
+      "labels": 18481,
+      "negative_labels": 4732
+    },
+    "absa_train_f50_s43.csv": {
+      "reviews": 4962,
+      "sentences": 21229,
+      "labels": 36454,
+      "negative_labels": 9401
+    },
+    "absa_train_f10_s44.csv": {
+      "reviews": 993,
+      "sentences": 4267,
+      "labels": 7275,
+      "negative_labels": 1905
+    },
+    "absa_train_f25_s44.csv": {
+      "reviews": 2481,
+      "sentences": 10847,
+      "labels": 18521,
+      "negative_labels": 4766
+    },
+    "absa_train_f50_s44.csv": {
+      "reviews": 4962,
+      "sentences": 21194,
+      "labels": 36479,
+      "negative_labels": 9261
+    },
+    "absa_train_f10_s45.csv": {
+      "reviews": 993,
+      "sentences": 4183,
+      "labels": 7121,
+      "negative_labels": 2061
+    },
+    "absa_train_f25_s45.csv": {
+      "reviews": 2481,
+      "sentences": 10418,
+      "labels": 17881,
+      "negative_labels": 4716
+    },
+    "absa_train_f50_s45.csv": {
+      "reviews": 4962,
+      "sentences": 21036,
+      "labels": 36341,
+      "negative_labels": 9615
+    },
+    "absa_train_f10_s46.csv": {
+      "reviews": 993,
+      "sentences": 4114,
+      "labels": 7275,
+      "negative_labels": 1850
+    },
+    "absa_train_f25_s46.csv": {
+      "reviews": 2481,
+      "sentences": 10536,
+      "labels": 18439,
+      "negative_labels": 4643
+    },
+    "absa_train_f50_s46.csv": {
+      "reviews": 4962,
+      "sentences": 21162,
+      "labels": 36849,
+      "negative_labels": 9473
+    }
+  }
+}

@@ -1,0 +1,73 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# Environments, caches, local tooling
+# ═══════════════════════════════════════════════════════════════════════════
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.log
+.claude/
+# GitHub CLI login kept inside gujincheng (the server account is shared); never commit it
+.gh_config/
+# fresh exports built for the private GitHub copy (review-ai/tools/export_for_github.sh)
+github_export/
+# run logs; only the checksum of the follow-up pre-registration is kept
+review-ai/logs/*
+!review-ai/logs/followup/
+review-ai/logs/followup/*
+!review-ai/logs/followup/plan_sha256_at_launch.txt
+
+# ═══════════════════════════════════════════════════════════════════════════
+# Model checkpoints (large, regenerable)
+# ═══════════════════════════════════════════════════════════════════════════
+review-ai/checkpoints/
+review-ai/hf_xlmr_base*/
+review-ai/gold/models/
+
+# ═══════════════════════════════════════════════════════════════════════════
+# LICENSED DATA — never commit, never push
+# Never push this repository: its history before 39e3c20 contains licensed files.
+# The private GitHub copy is a fresh export without history (review-ai/tools/export_for_github.sh).
+# ═══════════════════════════════════════════════════════════════════════════
+
+# ── Rakuten Travel data (NII-IDR agreement) ──
+# yearly review panel TSVs
+review-ai/gold/data/raw/
+# Gold ABSA corpus, Tsukuba corpus, hotel master
+review-ai/gold/data/travel_aspect_sentiment.tsv
+review-ai/gold/data/annotation01_tsukuba_corpus_*.tsv
+review-ai/gold/data/02_Travel_HotelMaster.tsv
+# RQ5 human-verification sample (sentences from the Gold corpus)
+review-ai/gold/data/verification_sample_to_annotate.*
+
+# ── Derived files that embed Rakuten review text or per-sentence Gold labels ──
+review-ai/data/*.csv
+review-ai/data/absa_full/*.csv
+review-ai/data/panel_parsed/
+review-ai/data/panel_weak_*.jsonl
+review-ai/data/weak_all/*.jsonl
+review-ai/data/ablation/
+review-ai/data/oseti_sentence_cache.json
+review-ai/data/panel_overlap_with_gold.json
+# test_probs/*.npz hold per-sentence Gold test labels (y_true); kept on disk as the analysis archive
+review-ai/results/test_probs/
+review-ai/results/travel_review_2024_profile.json
+review-ai/results/approx_dedup_panel_gold*.json
+# leaked in the initial commit 2a8f042, untracked since
+review-ai/results/uploaded_data_profile.json
+
+# ── Mercari comments (legacy 3-class project) ──
+review-ai/legacy/mercari_3class/data_raw/
+review-ai/legacy/mercari_3class/outputs/
+review-ai/legacy/mercari_3class/data/
+review-ai/legacy/mercari_3class/gold/data/train/
+review-ai/legacy/mercari_3class/gold/data/valid/
+review-ai/legacy/mercari_3class/gold/data/test/
+review-ai/legacy/mercari_3class/gold/data/refined/
+review-ai/legacy/mercari_3class/gold/data/reviewed/*.csv
+review-ai/legacy/mercari_3class/gold/data/reviewed/boundary_samples/*.csv
+review-ai/legacy/mercari_3class/gold/metadata/error_analysis_*.csv
+review-ai/legacy/mercari_3class/gold/models/
+
+# Project-local Hugging Face model cache (re-downloadable by revision)
+hf_cache/

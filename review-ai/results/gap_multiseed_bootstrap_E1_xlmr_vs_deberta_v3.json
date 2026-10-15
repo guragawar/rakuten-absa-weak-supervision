@@ -1,0 +1,53 @@
+{
+  "label_a": "E1_xlmr",
+  "label_b": "deberta_v3",
+  "runs_a": [
+    "results/test_probs/E1_xlmr_seed42.npz",
+    "results/test_probs/E1_xlmr_seed43.npz",
+    "results/test_probs/E1_xlmr_seed44.npz",
+    "results/test_probs/E1_xlmr_seed45.npz",
+    "results/test_probs/E1_xlmr_seed46.npz"
+  ],
+  "runs_b": [
+    "results/test_probs/deberta_v3_seed42.npz",
+    "results/test_probs/deberta_v3_seed43.npz",
+    "results/test_probs/deberta_v3_seed44.npz",
+    "results/test_probs/deberta_v3_seed45.npz",
+    "results/test_probs/deberta_v3_seed46.npz"
+  ],
+  "n_test_sentences": 5356,
+  "n_boot": 2000,
+  "per_seed_gaps_a": [
+    0.04419520735310212,
+    0.04581079298060431,
+    0.03651498335183134,
+    0.054197819084488286,
+    0.0362884436160299
+  ],
+  "per_seed_gaps_b": [
+    0.0013490941796222566,
+    0.026608887368381073,
+    0.030947080070017008,
+    0.041625123577543666,
+    0.02476623329821448
+  ],
+  "mean_gap_a": 0.04340144927721119,
+  "mean_gap_b": 0.025059283698755697,
+  "shrinkage_point": 0.018342165578455496,
+  "bootstrap": {
+    "gap_a_ci": [
+      -0.0021193590719764495,
+      0.08340529579317206
+    ],
+    "gap_b_ci": [
+      -0.023369370230540278,
+      0.06959944677515778
+    ],
+    "shrinkage_ci": [
+      -0.008833113544356298,
+      0.046589554475503545
+    ],
+    "P_shrinkage_gt_0": 0.896,
+    "significant_at_95": false
+  }
+}

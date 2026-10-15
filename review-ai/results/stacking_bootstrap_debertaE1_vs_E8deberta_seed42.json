@@ -1,0 +1,39 @@
+{
+  "comparison": "DeBERTa-E1(seed42) vs DeBERTa+E7/E8 recent2M(seed42)",
+  "n_boot": 2000,
+  "metrics": {
+    "agg_negative_f1": {
+      "E1_deberta": 0.7229,
+      "E8_deberta": 0.7447,
+      "delta": 0.0218,
+      "ci": [
+        0.0095,
+        0.0348
+      ],
+      "P_gt_0": 1.0,
+      "significant_at_95": true
+    },
+    "agg_positive_f1": {
+      "E1_deberta": 0.8689,
+      "E8_deberta": 0.8718,
+      "delta": 0.0029,
+      "ci": [
+        -0.0022,
+        0.0086
+      ],
+      "P_gt_0": 0.8625,
+      "significant_at_95": false
+    },
+    "implicit_neg_f1": {
+      "E1_deberta": 0.8591,
+      "E8_deberta": 0.861,
+      "delta": 0.0019,
+      "ci": [
+        -0.0076,
+        0.0122
+      ],
+      "P_gt_0": 0.6435,
+      "significant_at_95": false
+    }
+  }
+}

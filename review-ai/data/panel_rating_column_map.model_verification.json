@@ -1,0 +1,201 @@
+{
+  "generated_at": "2026-07-16T02:55:28.635881+00:00",
+  "panel_csv": "/home/etl/gujincheng/review-ai/data/panel_train_pool.csv",
+  "checkpoint_dir": "/home/etl/gujincheng/review-ai/checkpoints/absa_asl_v1/checkpoint-3984",
+  "n_per_col_requested": 200,
+  "seed": 42,
+  "total_reviews_scanned": 583778,
+  "structural_anchor_applied": true,
+  "missing_rate": {
+    "rating_1": 0.0,
+    "rating_2": 0.2955,
+    "rating_3": 0.0496,
+    "rating_4": 0.0,
+    "rating_5": 0.0044,
+    "rating_6": 0.0
+  },
+  "aspect_baseline_neg_hit_rate": {
+    "サービス": 0.49,
+    "立地": 0.0275,
+    "部屋": 0.2233,
+    "設備・アメニティ": 0.5767,
+    "風呂": 0.1367,
+    "食事": 0.2508
+  },
+  "hit_rate_matrix": {
+    "rating_1": {
+      "サービス": 0.46,
+      "立地": 0.045,
+      "部屋": 0.355,
+      "設備・アメニティ": 0.59,
+      "風呂": 0.12,
+      "食事": 0.17
+    },
+    "rating_2": {
+      "サービス": 0.44,
+      "立地": 0.025,
+      "部屋": 0.155,
+      "設備・アメニティ": 0.505,
+      "風呂": 0.115,
+      "食事": 0.505
+    },
+    "rating_3": {
+      "サービス": 0.31,
+      "立地": 0.03,
+      "部屋": 0.19,
+      "設備・アメニティ": 0.56,
+      "風呂": 0.165,
+      "食事": 0.155
+    },
+    "rating_4": {
+      "サービス": 0.67,
+      "立地": 0.025,
+      "部屋": 0.225,
+      "設備・アメニティ": 0.58,
+      "風呂": 0.12,
+      "食事": 0.215
+    },
+    "rating_5": {
+      "サービス": 0.425,
+      "立地": 0.025,
+      "部屋": 0.16,
+      "設備・アメニティ": 0.67,
+      "風呂": 0.08,
+      "食事": 0.21
+    },
+    "rating_6": {
+      "サービス": 0.635,
+      "立地": 0.015,
+      "部屋": 0.255,
+      "設備・アメニティ": 0.555,
+      "風呂": 0.22,
+      "食事": 0.25
+    }
+  },
+  "lift_matrix": {
+    "rating_1": {
+      "サービス": -0.03,
+      "立地": 0.0175,
+      "部屋": 0.1317,
+      "設備・アメニティ": 0.0133,
+      "風呂": -0.0167,
+      "食事": -0.0808
+    },
+    "rating_2": {
+      "サービス": -0.05,
+      "立地": -0.0025,
+      "部屋": -0.0683,
+      "設備・アメニティ": -0.0717,
+      "風呂": -0.0217,
+      "食事": 0.2542
+    },
+    "rating_3": {
+      "サービス": -0.18,
+      "立地": 0.0025,
+      "部屋": -0.0333,
+      "設備・アメニティ": -0.0167,
+      "風呂": 0.0283,
+      "食事": -0.0958
+    },
+    "rating_4": {
+      "サービス": 0.18,
+      "立地": -0.0025,
+      "部屋": 0.0017,
+      "設備・アメニティ": 0.0033,
+      "風呂": -0.0167,
+      "食事": -0.0358
+    },
+    "rating_5": {
+      "サービス": -0.065,
+      "立地": -0.0025,
+      "部屋": -0.0633,
+      "設備・アメニティ": 0.0933,
+      "風呂": -0.0567,
+      "食事": -0.0408
+    },
+    "rating_6": {
+      "サービス": 0.145,
+      "立地": -0.0125,
+      "部屋": 0.0317,
+      "設備・アメニティ": -0.0217,
+      "風呂": 0.0833,
+      "食事": -0.0008
+    }
+  },
+  "n_high_confidence": 5,
+  "acceptance_high_ge_5_of_6": true,
+  "mapping": {
+    "rating_1": {
+      "aspect": "部屋",
+      "confidence": "high",
+      "method": "model_negative_hit_lift",
+      "neg_hit_rate": 0.355,
+      "lift": 0.1317,
+      "margin_over_runner_up": 0.1142,
+      "missing_rate": 0.0,
+      "rating_text_inconsistency_rate": 0.645,
+      "n_samples": 200,
+      "note": ""
+    },
+    "rating_2": {
+      "aspect": "食事",
+      "confidence": "high",
+      "method": "structural_missing_rate",
+      "neg_hit_rate": 0.505,
+      "lift": 0.2542,
+      "margin_over_runner_up": 0.2567,
+      "missing_rate": 0.2955,
+      "rating_text_inconsistency_rate": 0.495,
+      "n_samples": 200,
+      "note": "missing_rate=0.296; model_argmax=食事"
+    },
+    "rating_3": {
+      "aspect": "風呂",
+      "confidence": "high",
+      "method": "structural_missing_rate",
+      "neg_hit_rate": 0.165,
+      "lift": 0.0283,
+      "margin_over_runner_up": 0.0258,
+      "missing_rate": 0.0496,
+      "rating_text_inconsistency_rate": 0.835,
+      "n_samples": 200,
+      "note": "missing_rate=0.050; model_argmax=風呂"
+    },
+    "rating_4": {
+      "aspect": "サービス",
+      "confidence": "high",
+      "method": "model_negative_hit_lift",
+      "neg_hit_rate": 0.67,
+      "lift": 0.18,
+      "margin_over_runner_up": 0.1767,
+      "missing_rate": 0.0,
+      "rating_text_inconsistency_rate": 0.33,
+      "n_samples": 200,
+      "note": ""
+    },
+    "rating_5": {
+      "aspect": "設備・アメニティ",
+      "confidence": "high",
+      "method": "model_negative_hit_lift",
+      "neg_hit_rate": 0.67,
+      "lift": 0.0933,
+      "margin_over_runner_up": 0.0958,
+      "missing_rate": 0.0044,
+      "rating_text_inconsistency_rate": 0.33,
+      "n_samples": 200,
+      "note": ""
+    },
+    "rating_6": {
+      "aspect": "立地",
+      "confidence": "low",
+      "method": "elimination",
+      "neg_hit_rate": 0.015,
+      "lift": -0.0125,
+      "margin_over_runner_up": -0.1575,
+      "missing_rate": 0.0,
+      "rating_text_inconsistency_rate": 0.985,
+      "n_samples": 200,
+      "note": "model rarely predicts 立地_ネガティブ (base_hit=0.027); assigned by elimination, not model-confirmed"
+    }
+  }
+}

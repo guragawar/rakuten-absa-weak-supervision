@@ -1,0 +1,245 @@
+{
+  "generated_at": "2026-07-17T03:58:16.332889+00:00",
+  "raw_dir": "/home/etl/gujincheng/review-ai/gold/data/raw",
+  "years_found": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "years_missing_2009_2024": [
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015
+  ],
+  "total_rows_ok": 4264391,
+  "per_year": [
+    {
+      "file": "/home/etl/gujincheng/review-ai/gold/data/raw/01_Travel_Review.2016.tsv",
+      "year": 2016,
+      "size_mb": 96.7,
+      "rows_ok": 82856,
+      "rows_malformed_short": 0,
+      "rows_embedded_tab": 76,
+      "empty_review": 0,
+      "unique_hotels": 10560,
+      "months_covered": 12,
+      "date_range": [
+        "2016-01",
+        "2016-12"
+      ],
+      "review_len_median": 90,
+      "review_len_p90": 282,
+      "review_len_mean": 128.9
+    },
+    {
+      "file": "/home/etl/gujincheng/review-ai/gold/data/raw/01_Travel_Review.2017.tsv",
+      "year": 2017,
+      "size_mb": 540.4,
+      "rows_ok": 465775,
+      "rows_malformed_short": 0,
+      "rows_embedded_tab": 414,
+      "empty_review": 0,
+      "unique_hotels": 15730,
+      "months_covered": 12,
+      "date_range": [
+        "2017-01",
+        "2017-12"
+      ],
+      "review_len_median": 87,
+      "review_len_p90": 278,
+      "review_len_mean": 126.1
+    },
+    {
+      "file": "/home/etl/gujincheng/review-ai/gold/data/raw/01_Travel_Review.2018.tsv",
+      "year": 2018,
+      "size_mb": 488.9,
+      "rows_ok": 414266,
+      "rows_malformed_short": 0,
+      "rows_embedded_tab": 508,
+      "empty_review": 4,
+      "unique_hotels": 16520,
+      "months_covered": 12,
+      "date_range": [
+        "2018-01",
+        "2018-12"
+      ],
+      "review_len_median": 91,
+      "review_len_p90": 288,
+      "review_len_mean": 130.6
+    },
+    {
+      "file": "/home/etl/gujincheng/review-ai/gold/data/raw/01_Travel_Review.2019.tsv",
+      "year": 2019,
+      "size_mb": 567.3,
+      "rows_ok": 492585,
+      "rows_malformed_short": 0,
+      "rows_embedded_tab": 810,
+      "empty_review": 10,
+      "unique_hotels": 17988,
+      "months_covered": 12,
+      "date_range": [
+        "2019-01",
+        "2019-12"
+      ],
+      "review_len_median": 87,
+      "review_len_p90": 273,
+      "review_len_mean": 124.2
+    },
+    {
+      "file": "/home/etl/gujincheng/review-ai/gold/data/raw/01_Travel_Review.2020.tsv",
+      "year": 2020,
+      "size_mb": 553.2,
+      "rows_ok": 466471,
+      "rows_malformed_short": 0,
+      "rows_embedded_tab": 674,
+      "empty_review": 0,
+      "unique_hotels": 18908,
+      "months_covered": 12,
+      "date_range": [
+        "2020-01",
+        "2020-12"
+      ],
+      "review_len_median": 92,
+      "review_len_p90": 291,
+      "review_len_mean": 131.8
+    },
+    {
+      "file": "/home/etl/gujincheng/review-ai/gold/data/raw/01_Travel_Review.2021.tsv",
+      "year": 2021,
+      "size_mb": 554.1,
+      "rows_ok": 457348,
+      "rows_malformed_short": 0,
+      "rows_embedded_tab": 543,
+      "empty_review": 0,
+      "unique_hotels": 18667,
+      "months_covered": 12,
+      "date_range": [
+        "2021-01",
+        "2021-12"
+      ],
+      "review_len_median": 90,
+      "review_len_p90": 283,
+      "review_len_mean": 128.7
+    },
+    {
+      "file": "/home/etl/gujincheng/review-ai/gold/data/raw/01_Travel_Review.2022.tsv",
+      "year": 2022,
+      "size_mb": 815.2,
+      "rows_ok": 700135,
+      "rows_malformed_short": 0,
+      "rows_embedded_tab": 1184,
+      "empty_review": 1,
+      "unique_hotels": 20830,
+      "months_covered": 12,
+      "date_range": [
+        "2022-01",
+        "2022-12"
+      ],
+      "review_len_median": 88,
+      "review_len_p90": 272,
+      "review_len_mean": 125.0
+    },
+    {
+      "file": "/home/etl/gujincheng/review-ai/gold/data/raw/01_Travel_Review.2023.tsv",
+      "year": 2023,
+      "size_mb": 701.5,
+      "rows_ok": 601177,
+      "rows_malformed_short": 0,
+      "rows_embedded_tab": 835,
+      "empty_review": 3,
+      "unique_hotels": 21562,
+      "months_covered": 12,
+      "date_range": [
+        "2023-01",
+        "2023-12"
+      ],
+      "review_len_median": 94,
+      "review_len_p90": 281,
+      "review_len_mean": 130.5
+    },
+    {
+      "file": "/home/etl/gujincheng/review-ai/gold/data/raw/01_Travel_Review.2024.tsv",
+      "year": 2024,
+      "size_mb": 682.1,
+      "rows_ok": 583778,
+      "rows_malformed_short": 0,
+      "rows_embedded_tab": 544,
+      "empty_review": 0,
+      "unique_hotels": 22142,
+      "months_covered": 12,
+      "date_range": [
+        "2024-01",
+        "2024-12"
+      ],
+      "review_len_median": 91,
+      "review_len_p90": 271,
+      "review_len_mean": 126.3
+    }
+  ],
+  "exports": [
+    {
+      "year": 2016,
+      "export_path": "data/panel_parsed/panel_2016.csv",
+      "rows_written": 82856,
+      "rows_skipped_empty": 0
+    },
+    {
+      "year": 2017,
+      "export_path": "data/panel_parsed/panel_2017.csv",
+      "rows_written": 465775,
+      "rows_skipped_empty": 0
+    },
+    {
+      "year": 2018,
+      "export_path": "data/panel_parsed/panel_2018.csv",
+      "rows_written": 414262,
+      "rows_skipped_empty": 4
+    },
+    {
+      "year": 2019,
+      "export_path": "data/panel_parsed/panel_2019.csv",
+      "rows_written": 492575,
+      "rows_skipped_empty": 10
+    },
+    {
+      "year": 2020,
+      "export_path": "data/panel_parsed/panel_2020.csv",
+      "rows_written": 466471,
+      "rows_skipped_empty": 0
+    },
+    {
+      "year": 2021,
+      "export_path": "data/panel_parsed/panel_2021.csv",
+      "rows_written": 457348,
+      "rows_skipped_empty": 0
+    },
+    {
+      "year": 2022,
+      "export_path": "data/panel_parsed/panel_2022.csv",
+      "rows_written": 700134,
+      "rows_skipped_empty": 1
+    },
+    {
+      "year": 2023,
+      "export_path": "data/panel_parsed/panel_2023.csv",
+      "rows_written": 601174,
+      "rows_skipped_empty": 3
+    },
+    {
+      "year": 2024,
+      "export_path": "data/panel_parsed/panel_2024.csv",
+      "rows_written": 583778,
+      "rows_skipped_empty": 0
+    }
+  ]
+}

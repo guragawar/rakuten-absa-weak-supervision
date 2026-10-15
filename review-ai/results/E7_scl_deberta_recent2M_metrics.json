@@ -1,0 +1,14 @@
+{
+  "experiment": "E7_scl_deberta_recent2M",
+  "objective": "supervised_contrastive (SCAPT-core SCL)",
+  "model_name": "ku-nlp/deberta-v3-base-japanese",
+  "temperature": 0.07,
+  "proj_dim": 128,
+  "min_source_year": 2021,
+  "num_epochs": 2.0,
+  "polarity_anchor": "label_overall (総合 rating<=2 -> neg, >=3 -> non-neg)",
+  "balanced_batches": true,
+  "valid_supcon_loss": 4.477804660797119,
+  "encoder_dir": "checkpoints/E7_scl_deberta_recent2M/encoder",
+  "smoke": false
+}

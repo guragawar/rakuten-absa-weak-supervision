@@ -1,0 +1,278 @@
+<title>10月1日 報告の台本</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=BIZ+UDPMincho:wght@700&family=Noto+Sans+SC:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column sized for ruby text, a sticky control strip, three sections in the order they are used (台本 → 想定問答 → 一言). Palette continues the meeting deck's academic blue. */
+:root {
+  color-scheme: light;
+  --paper: #f7f8fa;
+  --sheet: #ffffff;
+  --ink: #15181d;
+  --ink-2: #4c5563;
+  --muted: #7d8694;
+  --rule: #dfe3ea;
+  --accent: #1c5cab;
+  --accent-soft: #e8f0fa;
+  --zh-ink: #5a4a2e;
+  --zh-bg: #f8f3e8;
+  --hi: #b5471c;
+  --hi-bg: #fbeee6;
+  --mid: #8a6a00;
+  --mid-bg: #f8f1dc;
+  --lo: #5c6572;
+  --lo-bg: #eef0f3;
+  --f-body: "BIZ UDPGothic", "Hiragino Sans", "Yu Gothic", "Noto Sans CJK JP", sans-serif;
+  --f-head: "BIZ UDPMincho", "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif CJK JP", serif;
+  --f-zh: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --s-body: 1.0625rem;
+  --s-small: 0.8125rem;
+  --s-h2: 1.6rem;
+  --s-h3: 1.15rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #12151a; --sheet: #1a1e25; --ink: #e8ebf0; --ink-2: #aab3c0; --muted: #7f8896;
+    --rule: #2c323c; --accent: #7fb0ee; --accent-soft: #1d2a3b;
+    --zh-ink: #e2cfa8; --zh-bg: #2a2518;
+    --hi: #f0976d; --hi-bg: #3a2218; --mid: #e3c35a; --mid-bg: #332b12; --lo: #a8b1be; --lo-bg: #242a33;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #12151a; --sheet: #1a1e25; --ink: #e8ebf0; --ink-2: #aab3c0; --muted: #7f8896;
+  --rule: #2c323c; --accent: #7fb0ee; --accent-soft: #1d2a3b;
+  --zh-ink: #e2cfa8; --zh-bg: #2a2518;
+  --hi: #f0976d; --hi-bg: #3a2218; --mid: #e3c35a; --mid-bg: #332b12; --lo: #a8b1be; --lo-bg: #242a33;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--f-body); font-size: var(--s-body); line-height: 1.8;
+  padding-inline: 16px; padding-block: 0 64px;
+}
+.wrap { max-width: 46rem; margin: 0 auto; }
+h1, h2, h3 { font-family: var(--f-head); text-wrap: balance; margin: 0; }
+ruby rt { font-family: var(--f-body); font-size: 0.55em; color: var(--accent); font-weight: 400; }
+body.no-ruby rt { display: none; }
+body.no-zh .zh, body.no-zh .qzh { display: none; }
+body.quiz .ans .ja, body.quiz .ans .zh { filter: blur(6px); transition: filter .15s; }
+body.quiz .ans:hover .ja, body.quiz .ans:hover .zh, body.quiz .ans:focus-within .ja, body.quiz .ans.revealed .ja, body.quiz .ans.revealed .zh { filter: none; }
+
+/* masthead */
+.mast { padding-block: 40px 20px; display: grid; gap: 10px; }
+.mast .kicker { font-size: var(--s-small); color: var(--accent); font-weight: 700; letter-spacing: .08em; }
+.mast h1 { font-size: 2rem; line-height: 1.35; }
+.mast .meta { display: flex; flex-wrap: wrap; gap: 8px 20px; color: var(--ink-2); font-size: 0.95rem; font-variant-numeric: tabular-nums; }
+.mast .meta b { color: var(--ink); }
+
+/* control strip */
+.bar {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--rule);
+  margin-inline: -16px; padding: 10px 16px;
+}
+.bar .wrap { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; }
+.bar nav { display: flex; gap: 4px; flex-wrap: wrap; }
+.bar nav a {
+  color: var(--ink-2); text-decoration: none; font-size: 0.9rem; padding: 4px 10px; border-radius: 6px;
+}
+.bar nav a:hover, .bar nav a:focus-visible { background: var(--accent-soft); color: var(--accent); }
+.toggles { display: flex; gap: 6px; flex-wrap: wrap; }
+.tog {
+  font: inherit; font-size: 0.85rem; cursor: pointer; padding: 4px 12px; border-radius: 999px;
+  border: 1px solid var(--rule); background: var(--sheet); color: var(--ink-2);
+}
+.tog[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--sheet); }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* sections */
+.sec { padding-block: 36px 8px; display: grid; gap: 16px; scroll-margin-top: 64px; }
+.sec > h2 { font-size: var(--s-h2); }
+.sec > .lede { color: var(--ink-2); margin: 0; }
+
+.slide {
+  background: var(--sheet); border: 1px solid var(--rule); border-radius: 10px;
+  padding: 18px 20px; display: grid; gap: 10px; scroll-margin-top: 64px;
+}
+.slide-head { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: baseline; }
+.pg { font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; min-width: 2.6em; }
+.slide-head h3 { font-size: var(--s-h3); }
+.timing { display: flex; gap: 10px; font-size: var(--s-small); color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.timing .t { color: var(--ink-2); font-weight: 700; }
+.ja { margin: 0; line-height: 2.25; }
+.cue {
+  display: inline-block; font-size: var(--s-small); font-weight: 700; color: var(--accent);
+  background: var(--accent-soft); border-radius: 4px; padding: 0 8px; margin-right: 8px; line-height: 1.8;
+}
+.zh {
+  margin: 0; font-family: var(--f-zh); font-size: 0.9rem; line-height: 1.7;
+  color: var(--zh-ink); background: var(--zh-bg); border-radius: 6px; padding: 6px 10px;
+}
+
+/* Q&A */
+.filters { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  font: inherit; font-size: 0.85rem; cursor: pointer; padding: 2px 12px; border-radius: 999px;
+  border: 1px solid var(--rule); background: var(--sheet); color: var(--ink-2); line-height: 2;
+}
+.chip[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); font-weight: 700; }
+.chip rt { display: none; }
+.qa {
+  background: var(--sheet); border: 1px solid var(--rule); border-radius: 10px;
+  padding: 16px 20px; display: grid; gap: 8px;
+}
+.qa[hidden] { display: none; }
+.qa-head { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: var(--s-small); }
+.qn { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
+.lik { border-radius: 4px; padding: 0 8px; font-weight: 700; }
+.lik-hi { color: var(--hi); background: var(--hi-bg); }
+.lik-mid { color: var(--mid); background: var(--mid-bg); }
+.lik-lo { color: var(--lo); background: var(--lo-bg); }
+.qcat { color: var(--muted); }
+.q { font-weight: 700; font-size: 1.05rem; }
+.ans { display: grid; gap: 8px; border-top: 1px dashed var(--rule); padding-top: 10px; cursor: default; }
+body.quiz .ans { cursor: pointer; }
+.ans-label { font-size: var(--s-small); color: var(--accent); font-weight: 700; letter-spacing: .06em; }
+.count { font-size: var(--s-small); color: var(--muted); font-variant-numeric: tabular-nums; }
+
+/* phrases */
+.phrases { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); }
+.phrase { background: var(--sheet); border: 1px solid var(--rule); border-radius: 10px; padding: 14px 16px; display: grid; gap: 6px; align-content: start; }
+.when { font-size: var(--s-small); color: var(--muted); }
+
+.tips { margin: 0; padding-left: 1.2em; color: var(--ink-2); display: grid; gap: 4px; }
+
+@media (max-width: 520px) {
+  .slide-head { grid-template-columns: auto 1fr; }
+  .timing { grid-column: 1 / -1; }
+  .mast h1 { font-size: 1.6rem; }
+}
+@page { size: A4; margin: 14mm 14mm 16mm; }
+@media print {
+  :root { --paper: #fff; --sheet: #fff; }
+  .bar, .filters, .count { display: none; }
+  body { background: #fff; padding: 0; font-size: 10.5pt; }
+  .wrap { max-width: none; }
+  .mast { padding-block: 0 8px; }
+  .sec { padding-block: 0; gap: 10px; }
+  #qa, #phrases { break-before: page; }
+  .slide, .qa, .phrase { break-inside: avoid; border-color: #c9ced6; padding: 12px 14px; }
+  .qa[hidden] { display: grid !important; }
+  .ans .ja, .ans .zh { filter: none !important; }
+  .phrases { grid-template-columns: 1fr 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header class="mast">
+    <span class="kicker">最終学期 第1回 研究報告 ・ 2026年10月1日</span>
+    <h1>報告の台本と想定問答</h1>
+    <div class="meta">
+      <span>台本 <b>p.1〜@@n_slides@@</b>（付録 p.15 は除く）</span>
+      <span>話す時間の目安 <b>@@total@@</b>（p.14 の相談は別）</span>
+      <span>想定問答 <b>@@n_q@@ 問</b>（可能性 高 @@n_hi@@ 問）</span>
+    </div>
+  </header>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <nav aria-label="セクション">
+      <a href="#script">台本</a>
+      <a href="#qa">想定問答</a>
+      <a href="#phrases">困ったときの一言</a>
+    </nav>
+    <div class="toggles">
+      <button type="button" class="tog" id="t-ruby" aria-pressed="true">ふりがな</button>
+      <button type="button" class="tog" id="t-zh" aria-pressed="true">中文</button>
+      <button type="button" class="tog" id="t-quiz" aria-pressed="false">回答を隠す</button>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section class="sec" id="script">
+    <h2>発表の台本</h2>
+    <p class="lede">スライドのページ順です。時間はゆっくり読んだときの目安です。p.14 の相談と途中の質問を入れて、全体で20〜30分を想定しています。</p>
+    <ul class="tips zh">
+      <li>数字（0.7023 等）幻灯片上都有，慢慢读即可，不用背。</li>
+      <li>p.3–9 可以讲快一点；p.10 和 p.14 要放慢。老师开始思考时，安静等待就好，不要抢话。</li>
+      <li>老师中途提问时，先回答问题，再说「では、続けます」回到台本。</li>
+    </ul>
+    @@script@@
+  </section>
+
+  <section class="sec" id="qa">
+    <h2>想定問答</h2>
+    <p class="lede">先生に聞かれそうな質問と回答例です。「可能性 高」から練習してください。「回答を隠す」を押すと回答がぼやけ、タップすると表示されます。</p>
+    <div class="filters" role="group" aria-label="絞り込み">
+      <button type="button" class="chip" data-filter="*" id="f-all" aria-pressed="true">すべて</button>
+      <button type="button" class="chip" data-filter="hi" id="f-hi" aria-pressed="false">可能性 高のみ</button>
+      @@chips@@
+    </div>
+    <span class="count" id="qa-count" aria-live="polite"></span>
+    @@qa@@
+  </section>
+
+  <section class="sec" id="phrases">
+    <h2>困ったときの一言</h2>
+    <p class="lede">答えに詰まったときは、無理に答えず、この言い方で時間を取ってください。</p>
+    <div class="phrases">@@phrases@@</div>
+  </section>
+</main>
+
+<script>
+(function () {
+  var store = {
+    get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+    set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  };
+  function bindToggle(id, bodyClass, onMeansClass) {
+    var btn = document.getElementById(id);
+    function apply(on) {
+      btn.setAttribute("aria-pressed", on ? "true" : "false");
+      document.body.classList.toggle(bodyClass, onMeansClass ? on : !on);
+    }
+    var saved = store.get("mtg-" + id);
+    apply(saved === null ? btn.getAttribute("aria-pressed") === "true" : saved === "1");
+    btn.addEventListener("click", function () {
+      var on = btn.getAttribute("aria-pressed") !== "true";
+      apply(on);
+      store.set("mtg-" + id, on ? "1" : "0");
+    });
+  }
+  bindToggle("t-ruby", "no-ruby", false);
+  bindToggle("t-zh", "no-zh", false);
+  bindToggle("t-quiz", "quiz", true);
+
+  document.querySelectorAll(".ans").forEach(function (a) {
+    a.setAttribute("tabindex", "0");
+    a.addEventListener("click", function () {
+      if (document.body.classList.contains("quiz")) a.classList.toggle("revealed");
+    });
+  });
+
+  var chips = document.querySelectorAll(".chip");
+  var items = document.querySelectorAll(".qa");
+  var count = document.getElementById("qa-count");
+  function filter(f) {
+    var shown = 0;
+    items.forEach(function (it) {
+      var ok = f === "*" || (f === "hi" ? it.dataset.lik === "高" : it.dataset.cat === f);
+      it.hidden = !ok;
+      if (ok) shown++;
+    });
+    chips.forEach(function (c) { c.setAttribute("aria-pressed", c.dataset.filter === f ? "true" : "false"); });
+    count.textContent = shown + " 問を表示中";
+  }
+  chips.forEach(function (c) { c.addEventListener("click", function () { filter(c.dataset.filter); }); });
+  filter("*");
+})();
+</script>

@@ -1,0 +1,73 @@
+{
+  "note": "E8-SCL(SCAPT-core supervised contrastive) vs E8-BCE(masked BCE) vs DeBERTa-E1, 3-seed avg paired bootstrap",
+  "seed_means": {
+    "DeBERTa-E1": {
+      "agg_neg": 0.7262,
+      "implicit_neg": 0.8495
+    },
+    "E8-BCE": {
+      "agg_neg": 0.7447,
+      "implicit_neg": 0.864
+    },
+    "E8-SCL": {
+      "agg_neg": 0.7259,
+      "implicit_neg": 0.8603
+    }
+  },
+  "bootstrap": {
+    "SCL vs BCE|agg-neg": {
+      "delta": -0.0187,
+      "ci": [
+        -0.0284,
+        -0.0093
+      ],
+      "P_gt_0": 0.0,
+      "sig": "★SIG(neg)"
+    },
+    "SCL vs BCE|implicit-neg": {
+      "delta": -0.0036,
+      "ci": [
+        -0.0113,
+        0.0039
+      ],
+      "P_gt_0": 0.181,
+      "sig": "n.s."
+    },
+    "SCL vs E1(无预训练)|agg-neg": {
+      "delta": -0.0004,
+      "ci": [
+        -0.0082,
+        0.0068
+      ],
+      "P_gt_0": 0.468,
+      "sig": "n.s."
+    },
+    "SCL vs E1(无预训练)|implicit-neg": {
+      "delta": 0.011,
+      "ci": [
+        0.0045,
+        0.0176
+      ],
+      "P_gt_0": 1.0,
+      "sig": "★SIG"
+    },
+    "BCE vs E1(参照)|agg-neg": {
+      "delta": 0.0186,
+      "ci": [
+        0.009,
+        0.0285
+      ],
+      "P_gt_0": 1.0,
+      "sig": "★SIG"
+    },
+    "BCE vs E1(参照)|implicit-neg": {
+      "delta": 0.0144,
+      "ci": [
+        0.0066,
+        0.0228
+      ],
+      "P_gt_0": 1.0,
+      "sig": "★SIG"
+    }
+  }
+}

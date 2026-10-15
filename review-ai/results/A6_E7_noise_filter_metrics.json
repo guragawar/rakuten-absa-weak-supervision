@@ -1,0 +1,50 @@
+{
+  "experiment": "A6_E7_noise_filter",
+  "model_name": "xlm-roberta-base",
+  "heads": [
+    "立地",
+    "部屋",
+    "食事",
+    "風呂",
+    "サービス",
+    "設備"
+  ],
+  "pos_weight": [
+    9.596,
+    4.484,
+    4.755,
+    4.797,
+    6.012,
+    5.245
+  ],
+  "max_seq_length": 256,
+  "num_epochs": 2.0,
+  "smoke": false,
+  "valid_metrics": {
+    "eval_loss": 0.15680593252182007,
+    "eval_f1_立地": 0.4245,
+    "eval_prec_立地": 0.316,
+    "eval_rec_立地": 0.6464,
+    "eval_f1_部屋": 0.654,
+    "eval_prec_部屋": 0.5477,
+    "eval_rec_部屋": 0.8115,
+    "eval_f1_食事": 0.663,
+    "eval_prec_食事": 0.5459,
+    "eval_rec_食事": 0.8438,
+    "eval_f1_風呂": 0.6579,
+    "eval_prec_風呂": 0.5416,
+    "eval_rec_風呂": 0.8378,
+    "eval_f1_サービス": 0.6488,
+    "eval_prec_サービス": 0.532,
+    "eval_rec_サービス": 0.8312,
+    "eval_f1_設備": 0.5447,
+    "eval_prec_設備": 0.414,
+    "eval_rec_設備": 0.796,
+    "eval_macro_f1": 0.5988,
+    "eval_runtime": 37.1424,
+    "eval_samples_per_second": 1570.037,
+    "eval_steps_per_second": 24.554,
+    "epoch": 2.0
+  },
+  "encoder_dir": "checkpoints/A6_E7_noise_filter/encoder"
+}

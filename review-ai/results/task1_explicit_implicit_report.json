@@ -1,0 +1,153 @@
+{
+  "generated_at": "2026-07-09T04:33:59.114127+00:00",
+  "total_active_labels": 92273,
+  "by_split": {
+    "test": {
+      "total_active_labels": 9287,
+      "explicit": 1226,
+      "implicit": 8061,
+      "explicit_pct": 13.2,
+      "implicit_pct": 86.8
+    },
+    "train": {
+      "total_active_labels": 73824,
+      "explicit": 10311,
+      "implicit": 63513,
+      "explicit_pct": 13.97,
+      "implicit_pct": 86.03
+    },
+    "valid": {
+      "total_active_labels": 9162,
+      "explicit": 1225,
+      "implicit": 7937,
+      "explicit_pct": 13.37,
+      "implicit_pct": 86.63
+    }
+  },
+  "by_aspect": {
+    "朝食": {
+      "total": 15682,
+      "implicit": 14391,
+      "implicit_pct": 91.77
+    },
+    "夕食": {
+      "total": 11706,
+      "implicit": 10665,
+      "implicit_pct": 91.11
+    },
+    "風呂": {
+      "total": 10617,
+      "implicit": 9541,
+      "implicit_pct": 89.87
+    },
+    "設備・アメニティ": {
+      "total": 15117,
+      "implicit": 12889,
+      "implicit_pct": 85.26
+    },
+    "サービス": {
+      "total": 20218,
+      "implicit": 16763,
+      "implicit_pct": 82.91
+    },
+    "立地": {
+      "total": 7449,
+      "implicit": 6052,
+      "implicit_pct": 81.25
+    },
+    "部屋": {
+      "total": 11484,
+      "implicit": 9210,
+      "implicit_pct": 80.2
+    }
+  },
+  "by_polarity": {
+    "ネガティブ": {
+      "total": 23660,
+      "implicit": 21756,
+      "implicit_pct": 91.95
+    },
+    "ポジティブ": {
+      "total": 68613,
+      "implicit": 57755,
+      "implicit_pct": 84.18
+    }
+  },
+  "by_aspect_polarity": {
+    "朝食_ネガティブ": {
+      "total": 2975,
+      "implicit": 2782,
+      "implicit_pct": 93.51
+    },
+    "設備・アメニティ_ネガティブ": {
+      "total": 5920,
+      "implicit": 5504,
+      "implicit_pct": 92.97
+    },
+    "立地_ネガティブ": {
+      "total": 1118,
+      "implicit": 1037,
+      "implicit_pct": 92.75
+    },
+    "風呂_ネガティブ": {
+      "total": 2622,
+      "implicit": 2412,
+      "implicit_pct": 91.99
+    },
+    "夕食_ネガティブ": {
+      "total": 2150,
+      "implicit": 1972,
+      "implicit_pct": 91.72
+    },
+    "朝食_ポジティブ": {
+      "total": 12707,
+      "implicit": 11609,
+      "implicit_pct": 91.36
+    },
+    "部屋_ネガティブ": {
+      "total": 2878,
+      "implicit": 2624,
+      "implicit_pct": 91.17
+    },
+    "夕食_ポジティブ": {
+      "total": 9556,
+      "implicit": 8693,
+      "implicit_pct": 90.97
+    },
+    "サービス_ネガティブ": {
+      "total": 5997,
+      "implicit": 5425,
+      "implicit_pct": 90.46
+    },
+    "風呂_ポジティブ": {
+      "total": 7995,
+      "implicit": 7129,
+      "implicit_pct": 89.17
+    },
+    "設備・アメニティ_ポジティブ": {
+      "total": 9197,
+      "implicit": 7385,
+      "implicit_pct": 80.3
+    },
+    "サービス_ポジティブ": {
+      "total": 14221,
+      "implicit": 11338,
+      "implicit_pct": 79.73
+    },
+    "立地_ポジティブ": {
+      "total": 6331,
+      "implicit": 5015,
+      "implicit_pct": 79.21
+    },
+    "部屋_ポジティブ": {
+      "total": 8606,
+      "implicit": 6586,
+      "implicit_pct": 76.53
+    }
+  },
+  "hypothesis_check": {
+    "negative_implicit_pct": 91.95,
+    "positive_implicit_pct": 84.18,
+    "negative_implicit_higher_than_positive": true
+  }
+}

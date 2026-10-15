@@ -1,0 +1,147 @@
+{
+  "label_a": "modernbert310m_E1",
+  "label_b": "modernbert310m_E8",
+  "runs_a": [
+    "results/test_probs/CMP_E1_modernbert_ja_310m_seed42.npz",
+    "results/test_probs/CMP_E1_modernbert_ja_310m_seed43.npz",
+    "results/test_probs/CMP_E1_modernbert_ja_310m_seed44.npz"
+  ],
+  "runs_b": [
+    "results/test_probs/Aprime_E8_modernbert310m_seed42.npz",
+    "results/test_probs/Aprime_E8_modernbert310m_seed43.npz",
+    "results/test_probs/Aprime_E8_modernbert310m_seed44.npz"
+  ],
+  "definitions": {
+    "unit": "(test sentence, negative label) cell with gold=1 and tag=implicit",
+    "detected": "majority vote over seeds (>= half predict 1)",
+    "negation": "ない|なかっ|なく|ず|ぬ|にくい|づらい|ません",
+    "contrast_regret": "が、|けど|けれど|しかし|ただ|でも|のに|残念|惜しい|もう少し|もっと",
+    "degree": "とても|すごく|かなり|非常に|大変|全然|全く|ちょっと|少し|やや",
+    "short_max_chars": 35
+  },
+  "n_cells": 2065,
+  "recall_majority": {
+    "modernbert310m_E1": 0.7424,
+    "modernbert310m_E8": 0.7714
+  },
+  "counts": {
+    "both_detected": 1443,
+    "modernbert310m_E8_only(won)": 150,
+    "modernbert310m_E1_only(lost)": 90,
+    "both_missed": 382
+  },
+  "profiles": {
+    "both_detected": {
+      "n": 1443,
+      "mean_len": 42.0,
+      "median_len": 36,
+      "negation_rate": 0.461,
+      "contrast_rate": 0.516,
+      "degree_rate": 0.185,
+      "aspects": {
+        "サービス": 400,
+        "設備・アメニティ": 336,
+        "朝食": 202,
+        "風呂": 166,
+        "部屋": 152,
+        "夕食": 117,
+        "立地": 70
+      }
+    },
+    "modernbert310m_E8_only(won)": {
+      "n": 150,
+      "mean_len": 41.4,
+      "median_len": 34,
+      "negation_rate": 0.433,
+      "contrast_rate": 0.507,
+      "degree_rate": 0.247,
+      "aspects": {
+        "設備・アメニティ": 48,
+        "部屋": 28,
+        "朝食": 22,
+        "サービス": 20,
+        "夕食": 15,
+        "風呂": 9,
+        "立地": 8
+      }
+    },
+    "modernbert310m_E1_only(lost)": {
+      "n": 90,
+      "mean_len": 40.0,
+      "median_len": 33,
+      "negation_rate": 0.389,
+      "contrast_rate": 0.478,
+      "degree_rate": 0.211,
+      "aspects": {
+        "設備・アメニティ": 31,
+        "サービス": 19,
+        "風呂": 11,
+        "夕食": 9,
+        "部屋": 7,
+        "朝食": 7,
+        "立地": 6
+      }
+    },
+    "both_missed": {
+      "n": 382,
+      "mean_len": 39.2,
+      "median_len": 34,
+      "negation_rate": 0.395,
+      "contrast_rate": 0.432,
+      "degree_rate": 0.191,
+      "aspects": {
+        "設備・アメニティ": 105,
+        "サービス": 64,
+        "部屋": 58,
+        "風呂": 44,
+        "朝食": 40,
+        "夕食": 39,
+        "立地": 32
+      }
+    }
+  },
+  "strata": [
+    {
+      "name": "all implicit negative cells",
+      "n": 2065,
+      "recall_modernbert310m_E1": 0.7424,
+      "recall_modernbert310m_E8": 0.7714,
+      "delta": 0.0291
+    },
+    {
+      "name": "with negation form",
+      "n": 916,
+      "recall_modernbert310m_E1": 0.7642,
+      "recall_modernbert310m_E8": 0.7969,
+      "delta": 0.0328
+    },
+    {
+      "name": "without negation form",
+      "n": 1149,
+      "recall_modernbert310m_E1": 0.725,
+      "recall_modernbert310m_E8": 0.7511,
+      "delta": 0.0261
+    },
+    {
+      "name": "pure implicit (no negation, no contrast/regret)",
+      "n": 603,
+      "recall_modernbert310m_E1": 0.6882,
+      "recall_modernbert310m_E8": 0.7065,
+      "delta": 0.0182
+    },
+    {
+      "name": "short (<= 35 chars)",
+      "n": 1051,
+      "recall_modernbert310m_E1": 0.7307,
+      "recall_modernbert310m_E8": 0.7602,
+      "delta": 0.0295
+    },
+    {
+      "name": "long (> 35 chars)",
+      "n": 1014,
+      "recall_modernbert310m_E1": 0.7544,
+      "recall_modernbert310m_E8": 0.783,
+      "delta": 0.0286
+    }
+  ]
+}

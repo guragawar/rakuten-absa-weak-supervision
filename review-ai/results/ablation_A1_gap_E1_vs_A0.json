@@ -1,0 +1,49 @@
+{
+  "label_a": "xlmr_E1",
+  "label_b": "xlmr_E8_A0",
+  "runs_a": [
+    "results/test_probs/E1_xlmr_seed42.npz",
+    "results/test_probs/E1_xlmr_seed43.npz",
+    "results/test_probs/E1_xlmr_seed44.npz",
+    "results/test_probs/E1_xlmr_seed45.npz",
+    "results/test_probs/E1_xlmr_seed46.npz"
+  ],
+  "runs_b": [
+    "results/test_probs/A0_ref_E8_seed42.npz",
+    "results/test_probs/A0_ref_E8_seed43.npz",
+    "results/test_probs/A0_ref_E8_seed44.npz"
+  ],
+  "n_test_sentences": 5356,
+  "n_boot": 2000,
+  "per_seed_gaps_a": [
+    0.04419520735310212,
+    0.04581079298060431,
+    0.03651498335183134,
+    0.054197819084488286,
+    0.0362884436160299
+  ],
+  "per_seed_gaps_b": [
+    0.05949047021642295,
+    0.04961477172759454,
+    0.0406635036227887
+  ],
+  "mean_gap_a": 0.04340144927721119,
+  "mean_gap_b": 0.0499229151889354,
+  "shrinkage_point": -0.006521465911724207,
+  "bootstrap": {
+    "gap_a_ci": [
+      -0.0021193590719764495,
+      0.08340529579317206
+    ],
+    "gap_b_ci": [
+      0.008350267033431252,
+      0.08608243057214598
+    ],
+    "shrinkage_ci": [
+      -0.030554897926451573,
+      0.015859747024441376
+    ],
+    "P_shrinkage_gt_0": 0.291,
+    "significant_at_95": false
+  }
+}

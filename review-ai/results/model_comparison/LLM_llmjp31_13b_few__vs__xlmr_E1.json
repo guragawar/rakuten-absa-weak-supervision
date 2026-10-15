@@ -1,0 +1,95 @@
+{
+  "label_a": "xlmr_E1",
+  "label_b": "LLM_llmjp31_13b_few",
+  "runs_a": [
+    "/home/etl/gujincheng/review-ai/results/test_probs/CMP_E1_xlmr_base_seed42.npz",
+    "/home/etl/gujincheng/review-ai/results/test_probs/CMP_E1_xlmr_base_seed43.npz",
+    "/home/etl/gujincheng/review-ai/results/test_probs/CMP_E1_xlmr_base_seed44.npz"
+  ],
+  "runs_b": [
+    "/home/etl/gujincheng/review-ai/results/test_probs/LLM_llmjp31_13b_few.npz"
+  ],
+  "n_test_sentences": 5356,
+  "n_boot": 2000,
+  "bootstrap_seed": 42,
+  "n_implicit_neg_cells": 2065,
+  "method": "seed-averaged paired bootstrap; pooled binary F1 per metric",
+  "metrics": {
+    "agg_neg": {
+      "a_per_seed": [
+        0.704847801578354,
+        0.7056713741313607,
+        0.7131040487592512
+      ],
+      "b_per_seed": [
+        0.4059278350515464
+      ],
+      "a_mean": 0.707874408156322,
+      "b_mean": 0.4059278350515464,
+      "delta_point": -0.3019465731047756,
+      "delta_ci": [
+        -0.3259620683032257,
+        -0.27661139214795977
+      ],
+      "P_delta_gt_0": 0.0,
+      "significant_at_95": true
+    },
+    "agg_pos": {
+      "a_per_seed": [
+        0.8644469211479521,
+        0.8609834716411768,
+        0.8603945371775418
+      ],
+      "b_per_seed": [
+        0.5738010822914723
+      ],
+      "a_mean": 0.8619416433222237,
+      "b_mean": 0.5738010822914723,
+      "delta_point": -0.28814056103075136,
+      "delta_ci": [
+        -0.30469469645333275,
+        -0.27046373419118613
+      ],
+      "P_delta_gt_0": 0.0,
+      "significant_at_95": true
+    },
+    "micro": {
+      "a_per_seed": [
+        0.8267787770741313,
+        0.8245982564856633,
+        0.8249528598365807
+      ],
+      "b_per_seed": [
+        0.536101866589495
+      ],
+      "a_mean": 0.8254432977987918,
+      "b_mean": 0.536101866589495,
+      "delta_point": -0.2893414312092968,
+      "delta_ci": [
+        -0.3037484442127031,
+        -0.2748091494655967
+      ],
+      "P_delta_gt_0": 0.0,
+      "significant_at_95": true
+    },
+    "implicit_neg": {
+      "a_per_seed": [
+        0.8253697383390216,
+        0.8290331726679898,
+        0.8489409141583054
+      ],
+      "b_per_seed": [
+        0.44033232628398794
+      ],
+      "a_mean": 0.8344479417217722,
+      "b_mean": 0.44033232628398794,
+      "delta_point": -0.39411561543778423,
+      "delta_ci": [
+        -0.42054435716553806,
+        -0.36738642978208264
+      ],
+      "P_delta_gt_0": 0.0,
+      "significant_at_95": true
+    }
+  }
+}

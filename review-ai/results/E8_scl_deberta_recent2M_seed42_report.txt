@@ -1,0 +1,50 @@
+============================================================
+ABSA baseline test report
+============================================================
+
+Data files:
+  train: data/absa_train.csv
+  valid: data/absa_valid.csv
+  test:  data/absa_test.csv
+
+Training config:
+  loss_type:       asl
+  asl_gamma_pos:   0.0
+  asl_gamma_neg:   4.0
+  max_pos_weight:  999.0
+  thresholds:      per-label tuned (see thresholds.json)
+
+Overall metrics:
+  Micro F1:           0.8345
+  Macro F1:           0.7910
+  Sample F1:          0.8327
+  Exact match acc:    0.6660
+
+Aggregated polarity F1 (all aspects pooled):
+  ポジティブ (positive):  F1=0.8675  P=0.8598  R=0.8753
+  ネガティブ (negative):  F1=0.7324  P=0.7022  R=0.7654
+
+Per-aspect F1:
+  朝食            pos_F1=0.8939  neg_F1=0.7224
+  夕食            pos_F1=0.8679  neg_F1=0.6537
+  風呂            pos_F1=0.8914  neg_F1=0.7582
+  サービス          pos_F1=0.8906  neg_F1=0.7831
+  立地            pos_F1=0.8500  neg_F1=0.7137
+  設備・アメニティ      pos_F1=0.8042  neg_F1=0.7500
+  部屋            pos_F1=0.8434  neg_F1=0.6519
+
+Full per-label F1:
+  朝食_ポジティブ: 0.8939
+  朝食_ネガティブ: 0.7224
+  夕食_ポジティブ: 0.8679
+  夕食_ネガティブ: 0.6537
+  風呂_ポジティブ: 0.8914
+  風呂_ネガティブ: 0.7582
+  サービス_ポジティブ: 0.8906
+  サービス_ネガティブ: 0.7831
+  立地_ポジティブ: 0.8500
+  立地_ネガティブ: 0.7137
+  設備・アメニティ_ポジティブ: 0.8042
+  設備・アメニティ_ネガティブ: 0.7500
+  部屋_ポジティブ: 0.8434
+  部屋_ネガティブ: 0.6519

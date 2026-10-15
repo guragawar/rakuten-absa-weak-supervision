@@ -1,0 +1,44 @@
+[
+  {
+    "name": "全部隐式负面对",
+    "n": 2065,
+    "recall_E1": 0.7332,
+    "recall_DeBERTa": 0.7472,
+    "delta": 0.014
+  },
+  {
+    "name": "含否定形态(ない/ず/にくい等)",
+    "n": 912,
+    "recall_E1": 0.761,
+    "recall_DeBERTa": 0.7664,
+    "delta": 0.0055
+  },
+  {
+    "name": "无否定形态",
+    "n": 1153,
+    "recall_E1": 0.7112,
+    "recall_DeBERTa": 0.732,
+    "delta": 0.0208
+  },
+  {
+    "name": "纯隐式:无否定&无转折/遗憾标记(最难)",
+    "n": 777,
+    "recall_E1": 0.6924,
+    "recall_DeBERTa": 0.7181,
+    "delta": 0.0257
+  },
+  {
+    "name": "短句(<=35字)",
+    "n": 1051,
+    "recall_E1": 0.7184,
+    "recall_DeBERTa": 0.745,
+    "delta": 0.0266
+  },
+  {
+    "name": "长句(>35字)",
+    "n": 1014,
+    "recall_E1": 0.7485,
+    "recall_DeBERTa": 0.7495,
+    "delta": 0.001
+  }
+]

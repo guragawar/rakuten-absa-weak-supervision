@@ -1,0 +1,33 @@
+{
+  "checkpoint_a": "checkpoints/absa_asl_v2_baseline/checkpoint-3984",
+  "label_a": "E1_xlmr",
+  "checkpoint_b": "checkpoints/absa_tohoku_v3_baseline/checkpoint-3984",
+  "label_b": "tohoku_v3",
+  "n_test_sentences": 5356,
+  "n_boot": 2000,
+  "point": {
+    "explicit_f1_a": 0.8692307692307693,
+    "implicit_f1_a": 0.8250355618776671,
+    "gap_a": 0.04419520735310212,
+    "explicit_f1_b": 0.8947368421052632,
+    "implicit_f1_b": 0.858169753939729,
+    "gap_b": 0.03656708816553411,
+    "gap_shrinkage_a_minus_b": 0.0076281191875680054
+  },
+  "bootstrap": {
+    "gap_a_ci": [
+      -0.011106783344315904,
+      0.09186552972534286
+    ],
+    "gap_b_ci": [
+      -0.013600843013065389,
+      0.07864255982884673
+    ],
+    "shrinkage_diff_ci": [
+      -0.030279142035997252,
+      0.04400350721741436
+    ],
+    "P_shrinkage_gt_0": 0.636,
+    "significant_at_95": false
+  }
+}

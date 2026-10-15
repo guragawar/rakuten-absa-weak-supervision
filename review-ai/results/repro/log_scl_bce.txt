@@ -1,0 +1,11 @@
+  500/2000
+  1000/2000
+  1500/2000
+  2000/2000
+
+deberta_E8_scl - deberta_E8_bce  (3 vs 3 seeds)
+  agg_neg       A=0.7447 B=0.7259 Δ=-1.88pp CI[-2.84, -0.93] P(Δ>0)=0.0000
+  agg_pos       A=0.8724 B=0.8664 Δ=-0.60pp CI[-1.01, -0.19] P(Δ>0)=0.0010
+  micro         A=0.8414 B=0.8321 Δ=-0.93pp CI[-1.34, -0.55] P(Δ>0)=0.0000
+  implicit_neg  A=0.8640 B=0.8603 Δ=-0.37pp CI[-1.17, +0.40] P(Δ>0)=0.1795
+[INFO] wrote results/repro/scl_vs_bce_3seed.json

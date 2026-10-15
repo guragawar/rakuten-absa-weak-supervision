@@ -1,0 +1,172 @@
+{
+  "generated_at": "2026-07-14T07:01:44.647030+00:00",
+  "raw_dir": "/home/etl/gujincheng/review-ai/gold/data/raw",
+  "years_found": [
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2024
+  ],
+  "years_missing_2009_2024": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023
+  ],
+  "total_rows_ok": 3316310,
+  "per_year": [
+    {
+      "file": "/home/etl/gujincheng/review-ai/gold/data/raw/01_Travel_Review.2009.tsv",
+      "year": 2009,
+      "size_mb": 404.4,
+      "rows_ok": 350938,
+      "rows_malformed_short": 0,
+      "rows_embedded_tab": 31,
+      "empty_review": 0,
+      "unique_hotels": 9208,
+      "months_covered": 9,
+      "date_range": [
+        "2009-04",
+        "2009-12"
+      ],
+      "review_len_median": 123,
+      "review_len_p90": 299,
+      "review_len_mean": 153.2
+    },
+    {
+      "file": "/home/etl/gujincheng/review-ai/gold/data/raw/01_Travel_Review.2010.tsv",
+      "year": 2010,
+      "size_mb": 576.9,
+      "rows_ok": 491795,
+      "rows_malformed_short": 0,
+      "rows_embedded_tab": 141,
+      "empty_review": 0,
+      "unique_hotels": 10529,
+      "months_covered": 12,
+      "date_range": [
+        "2010-01",
+        "2010-12"
+      ],
+      "review_len_median": 114,
+      "review_len_p90": 293,
+      "review_len_mean": 145.7
+    },
+    {
+      "file": "/home/etl/gujincheng/review-ai/gold/data/raw/01_Travel_Review.2011.tsv",
+      "year": 2011,
+      "size_mb": 514.3,
+      "rows_ok": 439905,
+      "rows_malformed_short": 0,
+      "rows_embedded_tab": 211,
+      "empty_review": 1,
+      "unique_hotels": 11152,
+      "months_covered": 12,
+      "date_range": [
+        "2011-01",
+        "2011-12"
+      ],
+      "review_len_median": 106,
+      "review_len_p90": 296,
+      "review_len_mean": 141.1
+    },
+    {
+      "file": "/home/etl/gujincheng/review-ai/gold/data/raw/01_Travel_Review.2012.tsv",
+      "year": 2012,
+      "size_mb": 478.3,
+      "rows_ok": 402370,
+      "rows_malformed_short": 0,
+      "rows_embedded_tab": 257,
+      "empty_review": 1,
+      "unique_hotels": 11683,
+      "months_covered": 12,
+      "date_range": [
+        "2012-01",
+        "2012-12"
+      ],
+      "review_len_median": 105,
+      "review_len_p90": 304,
+      "review_len_mean": 142.7
+    },
+    {
+      "file": "/home/etl/gujincheng/review-ai/gold/data/raw/01_Travel_Review.2013.tsv",
+      "year": 2013,
+      "size_mb": 439.0,
+      "rows_ok": 363307,
+      "rows_malformed_short": 0,
+      "rows_embedded_tab": 239,
+      "empty_review": 0,
+      "unique_hotels": 12397,
+      "months_covered": 12,
+      "date_range": [
+        "2013-01",
+        "2013-12"
+      ],
+      "review_len_median": 110,
+      "review_len_p90": 315,
+      "review_len_mean": 148.3
+    },
+    {
+      "file": "/home/etl/gujincheng/review-ai/gold/data/raw/01_Travel_Review.2014.tsv",
+      "year": 2014,
+      "size_mb": 397.0,
+      "rows_ok": 330936,
+      "rows_malformed_short": 0,
+      "rows_embedded_tab": 231,
+      "empty_review": 0,
+      "unique_hotels": 12835,
+      "months_covered": 12,
+      "date_range": [
+        "2014-01",
+        "2014-12"
+      ],
+      "review_len_median": 108,
+      "review_len_p90": 315,
+      "review_len_mean": 147.3
+    },
+    {
+      "file": "/home/etl/gujincheng/review-ai/gold/data/raw/01_Travel_Review.2015.tsv",
+      "year": 2015,
+      "size_mb": 412.0,
+      "rows_ok": 353281,
+      "rows_malformed_short": 0,
+      "rows_embedded_tab": 210,
+      "empty_review": 0,
+      "unique_hotels": 13703,
+      "months_covered": 12,
+      "date_range": [
+        "2015-01",
+        "2015-12"
+      ],
+      "review_len_median": 100,
+      "review_len_p90": 302,
+      "review_len_mean": 139.3
+    },
+    {
+      "file": "/home/etl/gujincheng/review-ai/gold/data/raw/01_Travel_Review.2024.tsv",
+      "year": 2024,
+      "size_mb": 682.1,
+      "rows_ok": 583778,
+      "rows_malformed_short": 0,
+      "rows_embedded_tab": 544,
+      "empty_review": 0,
+      "unique_hotels": 22142,
+      "months_covered": 12,
+      "date_range": [
+        "2024-01",
+        "2024-12"
+      ],
+      "review_len_median": 91,
+      "review_len_p90": 271,
+      "review_len_mean": 126.3
+    }
+  ],
+  "exports": []
+}

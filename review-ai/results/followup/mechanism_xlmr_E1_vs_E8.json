@@ -1,0 +1,155 @@
+{
+  "label_a": "xlmr_E1",
+  "label_b": "xlmr_E8",
+  "runs_a": [
+    "results/test_probs/E1_xlmr_seed42.npz",
+    "results/test_probs/E1_xlmr_seed43.npz",
+    "results/test_probs/E1_xlmr_seed44.npz",
+    "results/test_probs/E1_xlmr_seed45.npz",
+    "results/test_probs/E1_xlmr_seed46.npz"
+  ],
+  "runs_b": [
+    "results/test_probs/A0_ref_E8_seed42.npz",
+    "results/test_probs/A0_ref_E8_seed43.npz",
+    "results/test_probs/A0_ref_E8_seed44.npz",
+    "results/test_probs/A7_E7s43_E8_seed42.npz",
+    "results/test_probs/A7_E7s43_E8_seed43.npz",
+    "results/test_probs/A7_E7s43_E8_seed44.npz",
+    "results/test_probs/A7_E7s44_E8_seed42.npz",
+    "results/test_probs/A7_E7s44_E8_seed43.npz",
+    "results/test_probs/A7_E7s44_E8_seed44.npz"
+  ],
+  "definitions": {
+    "unit": "(test sentence, negative label) cell with gold=1 and tag=implicit",
+    "detected": "majority vote over seeds (>= half predict 1)",
+    "negation": "ない|なかっ|なく|ず|ぬ|にくい|づらい|ません",
+    "contrast_regret": "が、|けど|けれど|しかし|ただ|でも|のに|残念|惜しい|もう少し|もっと",
+    "degree": "とても|すごく|かなり|非常に|大変|全然|全く|ちょっと|少し|やや",
+    "short_max_chars": 35
+  },
+  "n_cells": 2065,
+  "recall_majority": {
+    "xlmr_E1": 0.7332,
+    "xlmr_E8": 0.7569
+  },
+  "counts": {
+    "both_detected": 1431,
+    "xlmr_E8_only(won)": 132,
+    "xlmr_E1_only(lost)": 83,
+    "both_missed": 419
+  },
+  "profiles": {
+    "both_detected": {
+      "n": 1431,
+      "mean_len": 42.0,
+      "median_len": 35,
+      "negation_rate": 0.458,
+      "contrast_rate": 0.512,
+      "degree_rate": 0.197,
+      "aspects": {
+        "サービス": 379,
+        "設備・アメニティ": 355,
+        "朝食": 202,
+        "風呂": 156,
+        "部屋": 150,
+        "夕食": 118,
+        "立地": 71
+      }
+    },
+    "xlmr_E8_only(won)": {
+      "n": 132,
+      "mean_len": 48.8,
+      "median_len": 41,
+      "negation_rate": 0.455,
+      "contrast_rate": 0.583,
+      "degree_rate": 0.182,
+      "aspects": {
+        "設備・アメニティ": 32,
+        "風呂": 23,
+        "部屋": 22,
+        "サービス": 19,
+        "立地": 15,
+        "朝食": 12,
+        "夕食": 9
+      }
+    },
+    "xlmr_E1_only(lost)": {
+      "n": 83,
+      "mean_len": 40.9,
+      "median_len": 37,
+      "negation_rate": 0.422,
+      "contrast_rate": 0.59,
+      "degree_rate": 0.145,
+      "aspects": {
+        "設備・アメニティ": 27,
+        "サービス": 26,
+        "朝食": 8,
+        "部屋": 7,
+        "夕食": 6,
+        "立地": 5,
+        "風呂": 4
+      }
+    },
+    "both_missed": {
+      "n": 419,
+      "mean_len": 36.8,
+      "median_len": 32,
+      "negation_rate": 0.396,
+      "contrast_rate": 0.403,
+      "degree_rate": 0.186,
+      "aspects": {
+        "設備・アメニティ": 106,
+        "サービス": 79,
+        "部屋": 66,
+        "朝食": 49,
+        "風呂": 47,
+        "夕食": 47,
+        "立地": 25
+      }
+    }
+  },
+  "strata": [
+    {
+      "name": "all implicit negative cells",
+      "n": 2065,
+      "recall_xlmr_E1": 0.7332,
+      "recall_xlmr_E8": 0.7569,
+      "delta": 0.0237
+    },
+    {
+      "name": "with negation form",
+      "n": 916,
+      "recall_xlmr_E1": 0.7533,
+      "recall_xlmr_E8": 0.7806,
+      "delta": 0.0273
+    },
+    {
+      "name": "without negation form",
+      "n": 1149,
+      "recall_xlmr_E1": 0.7171,
+      "recall_xlmr_E8": 0.738,
+      "delta": 0.0209
+    },
+    {
+      "name": "pure implicit (no negation, no contrast/regret)",
+      "n": 603,
+      "recall_xlmr_E1": 0.6833,
+      "recall_xlmr_E8": 0.6998,
+      "delta": 0.0166
+    },
+    {
+      "name": "short (<= 35 chars)",
+      "n": 1051,
+      "recall_xlmr_E1": 0.7184,
+      "recall_xlmr_E8": 0.7345,
+      "delta": 0.0162
+    },
+    {
+      "name": "long (> 35 chars)",
+      "n": 1014,
+      "recall_xlmr_E1": 0.7485,
+      "recall_xlmr_E8": 0.7801,
+      "delta": 0.0316
+    }
+  ]
+}

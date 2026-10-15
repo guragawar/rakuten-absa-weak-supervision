@@ -1,0 +1,95 @@
+{
+  "label_a": "deberta_E1",
+  "label_b": "LLM_llmjp31_13b_few_lenient",
+  "runs_a": [
+    "/home/etl/gujincheng/review-ai/results/test_probs/CMP_E1_deberta_ja_seed42.npz",
+    "/home/etl/gujincheng/review-ai/results/test_probs/CMP_E1_deberta_ja_seed43.npz",
+    "/home/etl/gujincheng/review-ai/results/test_probs/CMP_E1_deberta_ja_seed44.npz"
+  ],
+  "runs_b": [
+    "/home/etl/gujincheng/review-ai/results/test_probs/LLM_llmjp31_13b_few_lenient.npz"
+  ],
+  "n_test_sentences": 5356,
+  "n_boot": 2000,
+  "bootstrap_seed": 42,
+  "n_implicit_neg_cells": 2065,
+  "method": "seed-averaged paired bootstrap; pooled binary F1 per metric",
+  "metrics": {
+    "agg_neg": {
+      "a_per_seed": [
+        0.727971079981925,
+        0.7170559717937417,
+        0.7266154541346589
+      ],
+      "b_per_seed": [
+        0.4143222506393862
+      ],
+      "a_mean": 0.7238808353034418,
+      "b_mean": 0.4143222506393862,
+      "delta_point": -0.3095585846640556,
+      "delta_ci": [
+        -0.3338478684902701,
+        -0.28533660653355875
+      ],
+      "P_delta_gt_0": 0.0,
+      "significant_at_95": true
+    },
+    "agg_pos": {
+      "a_per_seed": [
+        0.8671742808798646,
+        0.8652900688298918,
+        0.8716513953976359
+      ],
+      "b_per_seed": [
+        0.579020719130354
+      ],
+      "a_mean": 0.8680385817024642,
+      "b_mean": 0.579020719130354,
+      "delta_point": -0.28901786257211015,
+      "delta_ci": [
+        -0.3049681664346129,
+        -0.271459362088244
+      ],
+      "P_delta_gt_0": 0.0,
+      "significant_at_95": true
+    },
+    "micro": {
+      "a_per_seed": [
+        0.8340677055346588,
+        0.8294631444397103,
+        0.8373658067617369
+      ],
+      "b_per_seed": [
+        0.5419336260888346
+      ],
+      "a_mean": 0.8336322189120353,
+      "b_mean": 0.5419336260888346,
+      "delta_point": -0.29169859282320076,
+      "delta_ci": [
+        -0.3052167310879542,
+        -0.2778635228793972
+      ],
+      "P_delta_gt_0": 0.0,
+      "significant_at_95": true
+    },
+    "implicit_neg": {
+      "a_per_seed": [
+        0.8418395961862031,
+        0.8460463816708578,
+        0.8408644400785854
+      ],
+      "b_per_seed": [
+        0.450281425891182
+      ],
+      "a_mean": 0.8429168059785487,
+      "b_mean": 0.450281425891182,
+      "delta_point": -0.3926353800873667,
+      "delta_ci": [
+        -0.4176067028439433,
+        -0.3669213870554887
+      ],
+      "P_delta_gt_0": 0.0,
+      "significant_at_95": true
+    }
+  }
+}

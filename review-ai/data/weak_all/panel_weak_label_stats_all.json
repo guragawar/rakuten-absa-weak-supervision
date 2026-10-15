@@ -1,0 +1,230 @@
+{
+  "generated_at": "2026-07-19T07:20:19.543634+00:00",
+  "pool_csv": "data/panel_train_pool_all.csv",
+  "rating_map": "/home/etl/gujincheng/review-ai/data/panel_rating_column_map.json",
+  "head_to_aspect": {
+    "1": "立地",
+    "2": "部屋",
+    "3": "食事",
+    "4": "風呂",
+    "5": "サービス",
+    "6": "設備"
+  },
+  "head_to_column": {
+    "1": "overall_rating",
+    "2": "rating_1",
+    "3": "rating_2",
+    "4": "rating_3",
+    "5": "rating_4",
+    "6": "rating_5"
+  },
+  "overall_column": "rating_6",
+  "rows_skipped_unknown_split": 0,
+  "splits": {
+    "train": {
+      "rows": 6084468,
+      "heads": {
+        "1": {
+          "aspect": "立地",
+          "column": "overall_rating",
+          "valid": 6084468,
+          "masked": 0,
+          "pos_neg1_2": 176094,
+          "neg_nonneg3_5": 5908374,
+          "pos_ratio": 0.0289
+        },
+        "2": {
+          "aspect": "部屋",
+          "column": "rating_1",
+          "valid": 6084468,
+          "masked": 0,
+          "pos_neg1_2": 417254,
+          "neg_nonneg3_5": 5667214,
+          "pos_ratio": 0.0686
+        },
+        "3": {
+          "aspect": "食事",
+          "column": "rating_2",
+          "valid": 4308515,
+          "masked": 1775953,
+          "pos_neg1_2": 293910,
+          "neg_nonneg3_5": 4014605,
+          "pos_ratio": 0.0682
+        },
+        "4": {
+          "aspect": "風呂",
+          "column": "rating_3",
+          "valid": 5810801,
+          "masked": 273667,
+          "pos_neg1_2": 452952,
+          "neg_nonneg3_5": 5357849,
+          "pos_ratio": 0.078
+        },
+        "5": {
+          "aspect": "サービス",
+          "column": "rating_4",
+          "valid": 6084455,
+          "masked": 13,
+          "pos_neg1_2": 325804,
+          "neg_nonneg3_5": 5758651,
+          "pos_ratio": 0.0535
+        },
+        "6": {
+          "aspect": "設備",
+          "column": "rating_5",
+          "valid": 6050213,
+          "masked": 34255,
+          "pos_neg1_2": 424103,
+          "neg_nonneg3_5": 5626110,
+          "pos_ratio": 0.0701
+        },
+        "overall": {
+          "aspect": "総合(overall)",
+          "column": "rating_6",
+          "valid": 6084468,
+          "masked": 0,
+          "pos_neg1_2": 319066,
+          "neg_nonneg3_5": 5765402,
+          "pos_ratio": 0.0524
+        }
+      }
+    },
+    "valid": {
+      "rows": 675150,
+      "heads": {
+        "1": {
+          "aspect": "立地",
+          "column": "overall_rating",
+          "valid": 675150,
+          "masked": 0,
+          "pos_neg1_2": 19652,
+          "neg_nonneg3_5": 655498,
+          "pos_ratio": 0.0291
+        },
+        "2": {
+          "aspect": "部屋",
+          "column": "rating_1",
+          "valid": 675150,
+          "masked": 0,
+          "pos_neg1_2": 46285,
+          "neg_nonneg3_5": 628865,
+          "pos_ratio": 0.0686
+        },
+        "3": {
+          "aspect": "食事",
+          "column": "rating_2",
+          "valid": 478098,
+          "masked": 197052,
+          "pos_neg1_2": 32694,
+          "neg_nonneg3_5": 445404,
+          "pos_ratio": 0.0684
+        },
+        "4": {
+          "aspect": "風呂",
+          "column": "rating_3",
+          "valid": 645038,
+          "masked": 30112,
+          "pos_neg1_2": 50285,
+          "neg_nonneg3_5": 594753,
+          "pos_ratio": 0.078
+        },
+        "5": {
+          "aspect": "サービス",
+          "column": "rating_4",
+          "valid": 675147,
+          "masked": 3,
+          "pos_neg1_2": 36001,
+          "neg_nonneg3_5": 639146,
+          "pos_ratio": 0.0533
+        },
+        "6": {
+          "aspect": "設備",
+          "column": "rating_5",
+          "valid": 671307,
+          "masked": 3843,
+          "pos_neg1_2": 47003,
+          "neg_nonneg3_5": 624304,
+          "pos_ratio": 0.07
+        },
+        "overall": {
+          "aspect": "総合(overall)",
+          "column": "rating_6",
+          "valid": 675150,
+          "masked": 0,
+          "pos_neg1_2": 35533,
+          "neg_nonneg3_5": 639617,
+          "pos_ratio": 0.0526
+        }
+      }
+    }
+  },
+  "totals_per_head": {
+    "1": {
+      "aspect": "立地",
+      "column": "overall_rating",
+      "valid": 6759618,
+      "masked": 0,
+      "pos_neg1_2": 195746,
+      "neg_nonneg3_5": 6563872,
+      "pos_ratio": 0.029
+    },
+    "2": {
+      "aspect": "部屋",
+      "column": "rating_1",
+      "valid": 6759618,
+      "masked": 0,
+      "pos_neg1_2": 463539,
+      "neg_nonneg3_5": 6296079,
+      "pos_ratio": 0.0686
+    },
+    "3": {
+      "aspect": "食事",
+      "column": "rating_2",
+      "valid": 4786613,
+      "masked": 1973005,
+      "pos_neg1_2": 326604,
+      "neg_nonneg3_5": 4460009,
+      "pos_ratio": 0.0682
+    },
+    "4": {
+      "aspect": "風呂",
+      "column": "rating_3",
+      "valid": 6455839,
+      "masked": 303779,
+      "pos_neg1_2": 503237,
+      "neg_nonneg3_5": 5952602,
+      "pos_ratio": 0.078
+    },
+    "5": {
+      "aspect": "サービス",
+      "column": "rating_4",
+      "valid": 6759602,
+      "masked": 16,
+      "pos_neg1_2": 361805,
+      "neg_nonneg3_5": 6397797,
+      "pos_ratio": 0.0535
+    },
+    "6": {
+      "aspect": "設備",
+      "column": "rating_5",
+      "valid": 6721520,
+      "masked": 38098,
+      "pos_neg1_2": 471106,
+      "neg_nonneg3_5": 6250414,
+      "pos_ratio": 0.0701
+    },
+    "overall": {
+      "aspect": "総合(overall)",
+      "column": "rating_6",
+      "valid": 6759618,
+      "masked": 0,
+      "pos_neg1_2": 354599,
+      "neg_nonneg3_5": 6405019,
+      "pos_ratio": 0.0525
+    }
+  },
+  "outputs": {
+    "train": "data/weak_all/panel_weak_train.jsonl",
+    "valid": "data/weak_all/panel_weak_valid.jsonl"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "experiment": "E7_A3_epoch1",
+  "model_name": "xlm-roberta-base",
+  "heads": [
+    "立地",
+    "部屋",
+    "食事",
+    "風呂",
+    "サービス",
+    "設備"
+  ],
+  "pos_weight": [
+    6.145,
+    3.733,
+    4.096,
+    3.534,
+    4.513,
+    3.793
+  ],
+  "max_seq_length": 256,
+  "num_epochs": 1.0,
+  "smoke": false,
+  "valid_metrics": {
+    "eval_loss": 0.3029632866382599,
+    "eval_f1_立地": 0.3408,
+    "eval_prec_立地": 0.2919,
+    "eval_rec_立地": 0.4095,
+    "eval_f1_部屋": 0.6042,
+    "eval_prec_部屋": 0.5211,
+    "eval_rec_部屋": 0.7187,
+    "eval_f1_食事": 0.5823,
+    "eval_prec_食事": 0.5014,
+    "eval_rec_食事": 0.6945,
+    "eval_f1_風呂": 0.5523,
+    "eval_prec_風呂": 0.4991,
+    "eval_rec_風呂": 0.6183,
+    "eval_f1_サービス": 0.5883,
+    "eval_prec_サービス": 0.5074,
+    "eval_rec_サービス": 0.6997,
+    "eval_f1_設備": 0.5033,
+    "eval_prec_設備": 0.4319,
+    "eval_rec_設備": 0.603,
+    "eval_macro_f1": 0.5285,
+    "eval_runtime": 37.2793,
+    "eval_samples_per_second": 1564.271,
+    "eval_steps_per_second": 24.464,
+    "epoch": 1.0
+  },
+  "encoder_dir": "checkpoints/absa_weak_pretrain_v1_ep1/encoder"
+}

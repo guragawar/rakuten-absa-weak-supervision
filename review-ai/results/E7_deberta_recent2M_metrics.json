@@ -1,0 +1,50 @@
+{
+  "experiment": "E7_deberta_recent2M",
+  "model_name": "ku-nlp/deberta-v3-base-japanese",
+  "heads": [
+    "立地",
+    "部屋",
+    "食事",
+    "風呂",
+    "サービス",
+    "設備"
+  ],
+  "pos_weight": [
+    5.792,
+    3.685,
+    3.696,
+    3.439,
+    4.204,
+    3.642
+  ],
+  "max_seq_length": 256,
+  "num_epochs": 1.0,
+  "smoke": false,
+  "valid_metrics": {
+    "eval_loss": 0.3002462685108185,
+    "eval_f1_立地": 0.3658,
+    "eval_prec_立地": 0.3313,
+    "eval_rec_立地": 0.4084,
+    "eval_f1_部屋": 0.6166,
+    "eval_prec_部屋": 0.5238,
+    "eval_rec_部屋": 0.7493,
+    "eval_f1_食事": 0.6186,
+    "eval_prec_食事": 0.5558,
+    "eval_rec_食事": 0.6974,
+    "eval_f1_風呂": 0.5662,
+    "eval_prec_風呂": 0.526,
+    "eval_rec_風呂": 0.613,
+    "eval_f1_サービス": 0.6128,
+    "eval_prec_サービス": 0.528,
+    "eval_rec_サービス": 0.73,
+    "eval_f1_設備": 0.5397,
+    "eval_prec_設備": 0.4764,
+    "eval_rec_設備": 0.6224,
+    "eval_macro_f1": 0.5533,
+    "eval_runtime": 75.0178,
+    "eval_samples_per_second": 666.508,
+    "eval_steps_per_second": 10.424,
+    "epoch": 1.0
+  },
+  "encoder_dir": "checkpoints/E7_deberta_recent2M/encoder"
+}

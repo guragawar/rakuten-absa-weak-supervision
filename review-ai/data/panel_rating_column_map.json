@@ -1,0 +1,23 @@
+{
+  "source": "official Rakuten Travel data spec (data_spec_20251125.txt) + arXiv Nakayama et al., 'Rakuten Data Release'",
+  "note": "Authoritative column->aspect mapping per the official spec. Corrects an earlier off-by-one error where fields[9] (overall_rating) was mistaken for 総合 and rating_6 (fields[15]) was labelled 立地. Cross-validated: (1) official spec column order; (2) P0-3 model verification matched rating_1..5 exactly (部屋/食事/風呂/サービス/設備), see panel_rating_column_map.model_verification.json; (3) numeric check: rating_6 has the highest correlation with the mean of the other columns (0.825) => it is 総合, while overall_rating (立地) has the lowest (0.495).",
+  "aspect_columns": {
+    "立地": "overall_rating",
+    "部屋": "rating_1",
+    "食事": "rating_2",
+    "風呂": "rating_3",
+    "サービス": "rating_4",
+    "設備": "rating_5"
+  },
+  "overall_column": "rating_6",
+  "weak_supervision_aspects": ["立地", "部屋", "食事", "風呂", "サービス", "設備"],
+  "column_detail": {
+    "overall_rating": {"tsv_field": 9,  "spec": "評価1", "aspect": "立地",   "role": "aspect"},
+    "rating_1":       {"tsv_field": 10, "spec": "評価2", "aspect": "部屋",   "role": "aspect"},
+    "rating_2":       {"tsv_field": 11, "spec": "評価3", "aspect": "食事",   "role": "aspect"},
+    "rating_3":       {"tsv_field": 12, "spec": "評価4", "aspect": "風呂",   "role": "aspect"},
+    "rating_4":       {"tsv_field": 13, "spec": "評価5", "aspect": "サービス", "role": "aspect"},
+    "rating_5":       {"tsv_field": 14, "spec": "評価6", "aspect": "設備",   "role": "aspect"},
+    "rating_6":       {"tsv_field": 15, "spec": "評価7", "aspect": "総合",   "role": "overall"}
+  }
+}

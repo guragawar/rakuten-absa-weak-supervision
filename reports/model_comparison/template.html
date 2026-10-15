@@ -1,0 +1,234 @@
+<title>模型比较报告</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column for prose, wide scroll containers for tables and the chart.
+   Palette continues the project's academic blue; orange marks this study's configurations. */
+:root {
+  color-scheme: light;
+  --paper: #f6f7f9;
+  --sheet: #ffffff;
+  --ink: #14171c;
+  --ink-2: #4a5361;
+  --muted: #7b8492;
+  --rule: #dde2e9;
+  --accent: #1c5cab;
+  --accent-soft: #e8f0fa;
+  --enc: #2a78d6;
+  --ours: #eb6834;
+  --llm: #8a8f98;
+  --good: #1a7f37;
+  --warn: #9a5b00;
+  --warn-soft: #fbf3e2;
+  --f-body: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --f-head: "Noto Serif SC", "Songti SC", "SimSun", serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #12151a; --sheet: #191d24; --ink: #e7eaef; --ink-2: #aab2bf; --muted: #7f8896; --rule: #2b313b;
+    --accent: #7fb0ee; --accent-soft: #1c2838; --enc: #3987e5; --ours: #d95926; --llm: #8f96a1;
+    --good: #57c27a; --warn: #e3b55a; --warn-soft: #2c2512;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #12151a; --sheet: #191d24; --ink: #e7eaef; --ink-2: #aab2bf; --muted: #7f8896; --rule: #2b313b;
+  --accent: #7fb0ee; --accent-soft: #1c2838; --enc: #3987e5; --ours: #d95926; --llm: #8f96a1;
+  --good: #57c27a; --warn: #e3b55a; --warn-soft: #2c2512;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--f-body);
+       font-size: 16px; line-height: 1.75; padding-inline: 16px; padding-block: 0 72px; }
+.wrap { max-width: 50rem; margin: 0 auto; }
+h1, h2, h3 { font-family: var(--f-head); text-wrap: balance; line-height: 1.35; margin: 0; }
+h1 { font-size: 1.9rem; }
+h2 { font-size: 1.35rem; padding-top: 8px; border-top: 1px solid var(--rule); }
+h3 { font-size: 1.05rem; }
+p { margin: 0; }
+header { padding-block: 40px 8px; display: grid; gap: 8px; }
+.kicker { color: var(--accent); font-weight: 700; font-size: 0.85rem; letter-spacing: .06em; }
+.meta { color: var(--ink-2); font-size: 0.9rem; display: flex; flex-wrap: wrap; gap: 4px 18px; }
+section { display: grid; gap: 14px; padding-block: 28px 4px; }
+.keys { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.keys li { background: var(--sheet); border: 1px solid var(--rule); border-radius: 8px; padding: 12px 16px; }
+.keys b { color: var(--accent); }
+.scroll { overflow-x: auto; border: 1px solid var(--rule); border-radius: 8px; background: var(--sheet); }
+table { border-collapse: collapse; width: 100%; min-width: 760px; font-size: 0.88rem; }
+th, td { padding: 8px 10px; border-bottom: 1px solid var(--rule); text-align: left; vertical-align: top; }
+th { color: var(--ink-2); font-weight: 500; background: var(--accent-soft); white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.nw { white-space: nowrap; }
+.ci { color: var(--muted); font-size: 0.8em; }
+.sig { color: var(--good); font-size: 0.78em; font-weight: 700; }
+.muted { color: var(--muted); }
+.note { color: var(--ink-2); font-size: 0.9rem; }
+.callout { background: var(--warn-soft); border-radius: 8px; padding: 12px 16px; display: grid; gap: 6px; }
+.callout b { color: var(--warn); }
+.chart { padding: 12px 8px 4px; }
+.chart svg { width: 100%; min-width: 640px; height: auto; display: block; }
+.chart .grid { stroke: var(--rule); stroke-width: 1; }
+.chart .tick, .chart .val { fill: var(--ink-2); font-size: 12px; font-variant-numeric: tabular-nums; }
+.chart .lab { fill: var(--ink); font-size: 12.5px; }
+.chart .b-enc { fill: var(--enc); } .chart .b-ours { fill: var(--ours); } .chart .b-llm { fill: var(--llm); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 0.85rem; color: var(--ink-2); padding: 0 10px 10px; }
+.sw { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+ol, ul { margin: 0; padding-left: 1.3em; display: grid; gap: 6px; }
+code { font-size: 0.86em; background: var(--accent-soft); padding: 1px 5px; border-radius: 4px; }
+</style>
+
+<div class="wrap">
+<header>
+  <span class="kicker">硕士论文 · 补充实验报告（草稿，供 GU JINCHENG 审阅）</span>
+  <h1>和其他模型比，本研究的方法站在哪里</h1>
+  <div class="meta"><span>生成日期 @@DATE@@</span><span>状态：@@STATUS@@</span></div>
+</header>
+
+<section>
+  <h2>结论速览</h2>
+  <ul class="keys">
+    <li><b>新的日语编码器单独就很强。</b>LUKE-ja、ModernBERT-ja 310M、XLM-R large 只做普通微调，负面 F1 就达到 0.74–0.76，追平或超过了此前本研究最好的配置（DeBERTa + E7/E8，0.7447）。</li>
+    <li><b>在最强的底座上，弱监督预训练仍有增益，但变小了。</b>ModernBERT-ja 310M 加上 E7/E8 后，test 负面 F1 提升 1.05pp（显著），是所有配置中最高的；但 valid 上方向相反，需要如实说明。</li>
+    <li><b>隐式负面的提升在三个底座上都稳定。</b>XLM-R、DeBERTa、ModernBERT 上分别 +1.43、+1.45、+1.68pp，全部显著。这是本研究最稳健的贡献。</li>
+    <li><b>本地 LLM 远不如微调模型。</b>4 个模型 × 2 种设定中最好的是 Swallow-8B 少样本（0.628），比多语言基线 mBERT（0.662）还低。</li>
+    <li><b>食事（朝食/夕食）的问题，拆分评分也解决不了。</b>即使把相关弱标签增加到 4 倍以上，两个方面都没有改善。</li>
+  </ul>
+</section>
+
+<section>
+  <h2>1. 为什么做这次比较</h2>
+  <p>审查时最可能被问到的问题是：「换一个更新、更大的模型，或者直接用大语言模型，是不是就不需要你的方法了？」此前本研究只比较了 XLM-R、DeBERTa、东北大 BERT 三个底座，和先行研究也只能做「划分不同」的参考比较。这次在<b>同一数据划分、同一评测口径</b>下，补齐了论文中常见、对审查有说服力的比较对象。</p>
+</section>
+
+<section>
+  <h2>2. 怎么比</h2>
+  <ul>
+    <li><b>数据</b>：Gold 语料，按评论划分（训练 42,469 / 验证 5,367 / 测试 5,356 句）。所有模型用同一份划分。</li>
+    <li><b>编码器</b>：与本研究基线 E1 完全相同的训练设定（ASL 损失、逐标签在 valid 上调阈值），只换模型；每个模型 3 个 seed。</li>
+    <li><b>LLM</b>：不微调，提示词中给出原论文的 7 个方面定义与标注规则；零样本与少样本（20 个训练集例句）；贪心解码。</li>
+    <li><b>主指标</b>：负面聚合 F1（7 个负面标签合并计算）。<b>隐式负面</b>指不含感情词的负面标注上的检出 F1。</li>
+    <li><b>检验</b>：配对 bootstrap（2,000 次，多 seed 平均）。方括号内为 Δ 的 95% 置信区间，「显著」表示不含 0。</li>
+    <li><b>预注册</b>：模型清单、判定规则、发散处理规则都在跑实验前写定（<code>docs/model_comparison_plan.md</code>），途中的追加与修订均注明时间点。</li>
+    <li><b>数据协议</b>：所有推理都在研究室 GPU 上本地完成。按「楽天データセット」利用規約，Gold 文本不能发送到外部 API，因此没有比较 GPT-4o 等（见第 9 节）。</li>
+  </ul>
+</section>
+
+<section>
+  <h2>3. 结果一：微调编码器</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>模型</th><th>参数</th><th>valid 负面</th><th>test 负面（±sd）</th><th>test 正面</th><th>对 XLM-R base（pp）</th><th>对 DeBERTa + E7/E8（pp）</th></tr></thead>
+    <tbody>
+@@ENC_ROWS@@
+    </tbody>
+  </table></div>
+  <ul class="note">
+    <li>2025 年前后的日语编码器（LUKE、ModernBERT）与大模型（XLM-R large、BERT large）明显强于主线底座 XLM-R base，提升 3–5pp。</li>
+    <li>LUKE-ja 是先行研究（林・浦野，JSAI 2026）所用的模型；在本研究的划分与设定下，它是单独微调最强的编码器。</li>
+    <li>ModernBERT-ja 130M 的 seed 44 训练崩溃（valid 负面 0.41）。按预注册规则改用学习率 1e-5 重跑后，同一 seed 仍崩溃，说明问题出在该 seed 而非学习率；表中为按 valid 选出的 1e-5 结果，3 个 seed 的均值因此偏低。</li>
+    <li>mBERT 最弱，与日语研究中的一般结论一致。</li>
+  </ul>
+  <div class="scroll chart">
+@@CHART@@
+    <div class="legend"><span><i class="sw" style="background:var(--enc)"></i>编码器单独微调（E1）</span><span><i class="sw" style="background:var(--ours)"></i>本研究：E7 弱监督预训练 + E8 微调</span><span><i class="sw" style="background:var(--llm)"></i>本地 LLM（每个模型的最好设定，宽松解析）</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>4. 结果二：在最强的底座上，弱监督还有没有用</h2>
+  <p>按预注册规则，在 valid 负面 F1 最高的 ModernBERT-ja 310M 上追加了 E7（近年 200 万条评论）+ E8（3 个 seed）。把三个底座上的结果放在一起：</p>
+  <div class="scroll"><table>
+    <thead><tr><th>底座</th><th>运行次数</th><th>负面 F1 增益（pp）</th><th>隐式负面增益（pp）</th><th>正面 F1 增益（pp）</th></tr></thead>
+    <tbody>
+@@CROSS_ROWS@@
+    </tbody>
+  </table></div>
+  <div class="callout">
+    <p><b>需要如实说明的一点：</b>ModernBERT-ja 310M 上，test 负面 F1 提升显著，但 valid 负面 F1 为 @@APRIME_VALID@@，方向相反。底座越强，弱监督的整体增益越小，证据也越不一致。</p>
+    <p>另一方面，<b>隐式负面</b>的增益在三个底座上都在 +1.4~+1.7pp 之间且全部显著；正面 F1 基本不变。也就是说，评分弱监督主要改善的是「没有感情词的负面表达」，这一点不依赖底座。</p>
+  </div>
+</section>
+
+<section>
+  <h2>5. 结果三：大语言模型（本地运行）</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>模型</th><th>设定</th><th>负面 F1（严格）</th><th>负面 F1（宽松）</th><th>正面 F1</th><th>未按 JSON 输出的句数</th><th>对 XLM-R base（pp）</th></tr></thead>
+    <tbody>
+@@LLM_ROWS@@
+    </tbody>
+  </table></div>
+  <ul class="note">
+    <li><b>严格解析</b>（预注册）：只认 JSON 数组。<b>宽松解析</b>（修订，在看到 llm-jp、gpt-oss 的任何测试结果前决定）：没有 JSON 数组时直接识别标签名。llm-jp 有大约一半的输出只写标签名，严格解析会严重低估它，所以两者都列出。</li>
+    <li>Qwen、Swallow、gpt-oss 都是少样本好于零样本；日语强化的 Swallow 好于 Qwen。例外是 llm-jp：加入示例后输出格式变规范了（几乎都按 JSON 输出），但判断反而变差（宽松解析下 0.489 → 0.414）。</li>
+    <li>即使是最好的 LLM 设定，也低于所有正常收敛的微调编码器（ModernBERT-ja 130M 有 1 个 seed 训练崩溃，3 seed 均值 0.624，不计入）。细粒度的方面情感，需要学到 Gold 标注的判定习惯（例如「料理」同时算朝食和夕食），这在少量示例中很难传达。</li>
+  </ul>
+</section>
+
+<section>
+  <h2>6. 细分：显式 / 隐式与各个方面（负面 F1）</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>配置</th><th>显式负面</th><th>隐式负面</th><th>朝食</th><th>夕食</th><th>風呂</th><th>サービス</th><th>立地</th><th>設備</th><th>部屋</th></tr></thead>
+    <tbody>
+@@DETAIL_ROWS@@
+    </tbody>
+  </table></div>
+  <p class="note">显式/隐式是在对应 Gold 正例上的检出 F1（与 E2 诊断同一口径）。LLM 行为宽松解析。隐式负面比显式难，这一点在微调模型和 LLM 上都成立；LLM 在朝食上尤其弱。</p>
+</section>
+
+<section>
+  <h2>7. 与先行研究数字的参考比较</h2>
+  <p>下列研究都用同一语料，但<b>数据划分与筛选各不相同</b>，原论文的划分也没有随数据发布，所以只能作参考，不能说「超过了」。</p>
+  <div class="scroll"><table>
+    <thead><tr><th>研究</th><th>设定</th><th>报告的成绩</th></tr></thead>
+    <tbody>
+      <tr><td>Nakayama et al., LREC 2022（原论文）</td><td>14 标签，80:10:10 分层，BERT-MLC</td><td class=num>14 标签平均 F1 0.711</td></tr>
+      <tr><td>中山ら，NLP2021（日文版）</td><td>14 标签，8:1:1，BERT</td><td class=num>macro 0.68 / micro 0.72</td></tr>
+      <tr><td>味岡ら，JSAI 2024；西元ら，JSAI 2025</td><td>筛出 48,353 句（去掉无标签句与同一方面正负并存句），5 折</td><td class=num>micro 0.765–0.782</td></tr>
+      <tr><td>林・浦野，JSAI 2026</td><td>LUKE vs BERT，划分未写明</td><td class=num>负面 F1 0.66（「Macro」实为加权平均 0.71）</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">本研究在自有划分上：14 标签平均 F1 0.78–0.80，micro F1 0.82–0.85。差距的主要来源是更新的模型与逐标签调阈值，不能归功于本研究的方法；方法的效果只用同一划分内的比较来论证。</p>
+</section>
+
+<section>
+  <h2>8. 食事（朝食 / 夕食）问题的结论</h2>
+  <p>面板只有一个「食事」评分，而 Gold 分为朝食和夕食。我们用套餐名和正文关键词把食事评分拆成两个头，在两个数据规模上检验：</p>
+  <div class="scroll"><table>
+    <thead><tr><th>实验</th><th>运行次数</th><th>朝食负面（pp）</th><th>夕食负面（pp）</th><th>负面聚合（pp）</th></tr></thead>
+    <tbody>
+@@A5_ROWS@@
+    </tbody>
+  </table></div>
+  <p>A5b 中可判定的早餐差评 42,119 条、晚餐差评 8,403 条，都是 A5 的 4 倍以上，但两个方面仍然没有改善。<b>结论：问题不在信号量，单靠对齐评分粒度不能改善朝食和夕食。</b>论文中作为否定性结果报告，并把「朝食/夕食的瓶颈」列为今后的课题。</p>
+</section>
+
+<section>
+  <h2>9. 对论文的影响与建议</h2>
+  <ol>
+    <li><b>主张的重心</b>：从「我们的配置最好」调整为「评分弱监督在多个底座上都稳定改善负面，尤其是隐式负面」。前者会被更新的模型超越，后者在三个底座上都成立。</li>
+    <li><b>主表</b>：保留 XLM-R 主线（预注册、证据最完整）；本报告的编码器比较与 A' 作为扩展实验写在同一章。</li>
+    <li><b>如实写出的限制</b>：最强底座上增益变小且 valid/test 不一致；LLM 只比较了本地模型；食事问题未解决。</li>
+  </ol>
+</section>
+
+<section>
+  <h2>10. 需要请教授确认的事项</h2>
+  <ol>
+    <li><b>是否申请用 GPT-4o 等外部 API 做比较。</b>利用規約第3条第5項只允许乐天认可的生成式 AI；NII IDR 的 FAQ 4-1 说明输入外部服务属于向第三方提供，需事先许可。必要性：审查时常被问到「和 GPT 比如何」；本地最强的 LLM 也明显弱于微调模型，加上 API 结果可以让结论更完整。若不申请，论文中按「数据协议限制」说明即可。</li>
+    <li><b>开发中使用 AI 编程助手时附带看到的少量原文</b>（约十几到二十几句）是否需要报告或处理。</li>
+    <li><b>发表通知</b>：规约第6条要求在投稿 10 天前或发表 30 天前通知乐天；修论提交与答辩是否适用、由谁通知。</li>
+  </ol>
+</section>
+
+<section>
+  <h2>附录：模型版本与文件</h2>
+  <ul class="note">
+    <li>编码器与 LLM 的版本（Hugging Face revision）、设定与判定规则：<code>review-ai/docs/model_comparison_plan.md</code></li>
+    <li>汇总与全部检验：<code>review-ai/results/model_comparison_summary.json</code>、<code>review-ai/results/model_comparison/</code>（由 <code>tools/summarize_model_comparison.py</code> 生成）</li>
+    <li>A5/A5b：<code>review-ai/docs/ablation_plan_A5_A7.md</code>；数据处理记录：<code>review-ai/docs/data_handling_log.md</code></li>
+    <li>本报告由 <code>reports/model_comparison/build_report.py</code> 从上述结果文件生成。</li>
+  </ul>
+</section>
+</div>

@@ -1,0 +1,87 @@
+{
+  "n_pairs": 2065,
+  "counts": {
+    "both_detected": 1412,
+    "deberta_only(won)": 131,
+    "e1_only(lost)": 102,
+    "both_missed": 420
+  },
+  "recall_majority": {
+    "E1": 0.7332,
+    "DeBERTa": 0.7472
+  },
+  "profiles": [
+    {
+      "name": "both_detected",
+      "n": 1412,
+      "mean_len": 41.5,
+      "median_len": 35,
+      "negation_rate": 0.46,
+      "contrast_rate": 0.365,
+      "degree_rate": 0.174,
+      "aspects": {
+        "サービス": 384,
+        "設備・アメニティ": 351,
+        "朝食": 197,
+        "風呂": 151,
+        "部屋": 146,
+        "夕食": 113,
+        "立地": 70
+      }
+    },
+    {
+      "name": "deberta_only_won",
+      "n": 131,
+      "mean_len": 41.1,
+      "median_len": 35,
+      "negation_rate": 0.382,
+      "contrast_rate": 0.351,
+      "degree_rate": 0.122,
+      "aspects": {
+        "サービス": 34,
+        "設備・アメニティ": 30,
+        "部屋": 22,
+        "朝食": 15,
+        "風呂": 12,
+        "立地": 10,
+        "夕食": 8
+      }
+    },
+    {
+      "name": "e1_only_lost",
+      "n": 102,
+      "mean_len": 48.5,
+      "median_len": 41,
+      "negation_rate": 0.441,
+      "contrast_rate": 0.382,
+      "degree_rate": 0.176,
+      "aspects": {
+        "設備・アメニティ": 31,
+        "サービス": 21,
+        "朝食": 13,
+        "夕食": 11,
+        "部屋": 11,
+        "風呂": 9,
+        "立地": 6
+      }
+    },
+    {
+      "name": "both_missed",
+      "n": 420,
+      "mean_len": 39.2,
+      "median_len": 34,
+      "negation_rate": 0.4,
+      "contrast_rate": 0.255,
+      "degree_rate": 0.171,
+      "aspects": {
+        "設備・アメニティ": 108,
+        "部屋": 66,
+        "サービス": 64,
+        "風呂": 58,
+        "夕食": 48,
+        "朝食": 46,
+        "立地": 30
+      }
+    }
+  ]
+}

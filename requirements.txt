@@ -1,0 +1,28 @@
+# Direct dependencies of the thesis code (review-ai/*.py, review-ai/tools/*.py),
+# pinned to the versions every reported result was produced with.
+# Environment: Python 3.10.17, Linux x86_64, NVIDIA GPU (CUDA 12.8 runtime is
+# pulled in by the torch wheel). Full transitive lock: requirements-lock.txt.
+
+# Deep learning
+torch==2.9.1
+transformers==4.57.1
+datasets==4.4.1
+accelerate==1.11.0
+safetensors==0.7.0
+
+# Tokenizers for the backbones
+sentencepiece==0.2.1        # XLM-R, DeBERTa-v3-japanese
+tokenizers==0.22.1
+protobuf==7.36.2             # ModernBERT-ja tokenizer conversion (model comparison, 2026-10-12)
+fugashi==1.5.2              # cl-tohoku/bert-base-japanese-v3 (MeCab)
+unidic-lite==1.0.8
+
+# Data, statistics, analysis
+numpy==2.2.6
+pandas==2.3.3
+scikit-learn==1.7.2
+scipy==1.15.3
+oseti==0.4.3.1              # explicit/implicit tagging (Task 1, E2)
+openpyxl==3.1.5             # RQ5 verification sample (.xlsx)
+matplotlib==3.10.9
+tqdm==4.67.1
